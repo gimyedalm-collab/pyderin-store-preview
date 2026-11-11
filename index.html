@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PYDERIN 브랜드관 시안</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root { --red: #8d151e; --ink: #1d1b1a; --ground: #f5f2ee; --line: #ddd6ce; --mute: #5f5953; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Malgun Gothic", system-ui, sans-serif; background: #e4e1dc; color: #222; }
+  .top { max-width: 1240px; margin: auto; padding: 20px 24px 4px; font-size: 14px; line-height: 1.7; }
+  h1 { font-size: 20px; margin: 6px 0; }
+  .draft { display: inline-block; background: #b3261e; color: #fff; font-size: 12px; padding: 2px 8px; border-radius: 3px; }
+  .wrap { display: flex; gap: 36px; justify-content: center; align-items: flex-start; flex-wrap: wrap; padding: 16px 16px 50px; }
+
+  .phone { width: 390px; max-width: 100%; flex: none; background: var(--ground); border: 8px solid #222; border-radius: 28px; overflow: hidden; font-family: "Pretendard", sans-serif; color: var(--ink); letter-spacing: -.005em; }
+  .sec { position: relative; }
+  .n { position: absolute; top: 6px; right: 6px; z-index: 3; background: #222; color: #fff; font: 700 11px/20px "Malgun Gothic", sans-serif; width: 20px; height: 20px; text-align: center; border-radius: 50%; letter-spacing: 0; }
+  .logo { font-family: "Barlow Condensed", sans-serif; font-weight: 700; letter-spacing: .5px; }
+  .amz { font: 11px "Malgun Gothic", sans-serif; color: #777; text-align: center; padding: 6px 0; background: #fff; letter-spacing: 0; }
+  .eyebrow { display: block; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+  .pk { mix-blend-mode: multiply; display: block; }
+  sup { font-size: .6em; }
+
+  .title { padding: 36px 22px 16px; }
+  .title .eyebrow { color: var(--red); }
+  .title h3 { font-size: 25px; line-height: 1.16; font-weight: 600; letter-spacing: -.02em; margin: 8px 0 0; text-wrap: balance; }
+
+  .head { background: var(--red); color: #fff; height: 84px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .head .logo { font-size: 30px; line-height: 1; }
+  .head small { font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; margin-top: 7px; }
+  .nav { background: #fff; font-size: 13px; font-weight: 600; padding: 9px 22px; border-bottom: 1px solid var(--line); }
+
+  .hero { background: var(--red); color: #fff; padding: 30px 22px 0; }
+  .hero h2 { font-size: 38px; line-height: 1.02; font-weight: 600; letter-spacing: -.03em; margin: 10px 0 12px; }
+  .hero p { font-size: 16px; line-height: 1.4; margin: 0 0 22px; }
+  .hero .arch { background: var(--ground); border-radius: 173px 173px 0 0; padding: 22px 0 0; }
+  .hero .arch img { width: 66%; margin: auto; }
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); padding: 14px 22px 0; }
+  .facts div { font-size: 12px; line-height: 1.3; color: var(--mute); padding-right: 8px; }
+  .facts b { display: block; font-size: 18px; font-weight: 600; color: var(--ink); letter-spacing: -.02em; }
+  .cta { margin: 16px 22px 0; display: block; text-align: center; background: var(--ink); color: #fff; font-size: 15px; font-weight: 600; padding: 13px; border-radius: 999px; }
+  .note { font-size: 12px; line-height: 1.4; color: var(--mute); padding: 12px 22px 0; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #fff; }
+  .card { background: #fff; padding: 10px 12px 14px; font: 12.5px Arial, sans-serif; letter-spacing: 0; }
+  .card img { width: 100%; aspect-ratio: 1; object-fit: contain; display: block; }
+  .card b { display: block; font-size: 15px; margin-top: 2px; }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); padding: 0 12px 8px; position: relative; }
+  .steps::before { content: ""; position: absolute; left: 12.5%; right: 12.5%; bottom: 58px; border-top: 1px solid var(--ink); }
+  .steps div { text-align: center; }
+  .steps img { width: 100%; aspect-ratio: 3/4; object-fit: contain; }
+  .steps i { display: block; width: 9px; height: 9px; border-radius: 50%; background: var(--red); margin: 6px auto 9px; position: relative; }
+  .steps span { display: block; font-size: 12px; font-weight: 600; letter-spacing: .08em; color: var(--red); text-transform: uppercase; }
+  .steps em { font-style: normal; font-size: 14px; font-weight: 600; }
+
+  .photo { height: 176px; margin: 0 22px; background: url(src-aplus/01.jpg) left top / auto 232% no-repeat; }
+  .rows { padding: 6px 22px 0; }
+  .rows div { display: grid; grid-template-columns: 104px 1fr; gap: 10px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; line-height: 1.4; }
+  .rows b { font-weight: 600; }
+
+  .video { margin: 0 22px; position: relative; }
+  .video img { width: 100%; aspect-ratio: 2/1; object-fit: cover; display: block; }
+  .video i { position: absolute; inset: 0; margin: auto; width: 54px; height: 54px; border-radius: 50%; background: #fff; }
+  .video i::after { content: ""; position: absolute; left: 22px; top: 17px; border: 10px solid transparent; border-left: 15px solid var(--ink); }
+
+  .end { margin-top: 36px; background: var(--red); color: #fff; padding: 32px 22px; text-align: center; }
+  .end .logo { font-size: 34px; line-height: 1; }
+  .end small { display: block; font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; margin-top: 9px; }
+
+  .tex { height: 340px; position: relative; background: #fbfbfc; padding: 30px 22px; }
+  .tex::before { content: ""; position: absolute; inset: 0 0 0 38%; background: url(img/texture.jpg) right bottom / cover no-repeat; -webkit-mask-image: linear-gradient(90deg, transparent, #000 30%); mask-image: linear-gradient(90deg, transparent, #000 30%); }
+  .tex > * { position: relative; }
+  .tex .eyebrow { color: var(--red); }
+  .tex h3 { font-size: 30px; line-height: 1.04; font-weight: 600; letter-spacing: -.03em; margin: 10px 0 0; }
+  .white { background: #fff; padding-bottom: 26px; }
+  .dark { background: var(--ink); color: #fff; padding-bottom: 30px; }
+  .dark .title .eyebrow { color: #fff; opacity: .7; }
+  .dark .rows div { grid-template-columns: 56px 1fr; border-color: #ffffff2e; align-items: start; }
+  .dark .rows b { font-size: 30px; line-height: 1; font-weight: 500; letter-spacing: -.03em; }
+  .dark .rows strong { display: block; font-weight: 600; font-size: 16px; margin-bottom: 3px; }
+  .dark .rows span { color: #ffffffd9; }
+  .dark .note { color: #ffffffa6; }
+  .dark + .sec .title { padding-top: 36px; }
+
+  .side { flex: 1 1 580px; max-width: 760px; font-size: 13px; line-height: 1.65; }
+  .side h2 { font-size: 16px; margin: 0 0 8px; }
+  .side h2:not(:first-child) { margin-top: 28px; }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; background: #fff; min-width: 560px; }
+  th, td { border: 1px solid #cfcbc4; padding: 7px 8px; vertical-align: top; text-align: left; }
+  th { background: #f1efeb; white-space: nowrap; }
+  td:first-child { text-align: center; font-weight: 700; white-space: nowrap; }
+  .ok { color: #1a6b2f; font-weight: 700; white-space: nowrap; } .chk { color: #9a4a00; font-weight: 700; white-space: nowrap; } .no { color: #a3201a; font-weight: 700; white-space: nowrap; }
+  li { margin-bottom: 5px; }
+  code { background: #fff; padding: 0 4px; border: 1px solid #d8d3cb; border-radius: 3px; font-size: 12px; }
+
+  /* v5 */
+  .pro { background: var(--ink); color: #fff; padding-bottom: 28px; }
+  .pro .title .eyebrow { color: #fff; opacity: .7; }
+  .pro .title h3 { font-size: 27px; line-height: 1.1; text-wrap: wrap; }
+  .faces { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 6px 22px 0; }
+  .face { font-size: 12px; line-height: 1.3; color: #ffffffd9; }
+  .face i { display: block; aspect-ratio: 4/5; background: #3a3634; position: relative; overflow: hidden; margin-bottom: 8px; }
+  .face i::before { content: ""; position: absolute; left: 50%; top: 24%; width: 38%; aspect-ratio: 1; border-radius: 50%; background: #5a5450; transform: translateX(-50%); }
+  .face i::after { content: ""; position: absolute; left: 12%; right: 12%; top: 62%; bottom: -30%; border-radius: 50% 50% 0 0; background: #5a5450; }
+  .face b { display: block; color: #fff; font-weight: 600; font-size: 13px; }
+  .slot { font: 11px "Malgun Gothic", sans-serif; color: #ffd9a8; padding: 8px 22px 0; letter-spacing: 0; }
+  .nums { display: grid; grid-template-columns: 1fr 1fr; margin: 22px 22px 0; border-top: 1px solid #ffffff2e; }
+  .nums div { padding: 16px 0 0; font-size: 13px; line-height: 1.35; color: #ffffffd9; }
+  .nums b { display: block; font-size: 52px; line-height: 1; font-weight: 500; letter-spacing: -.04em; color: #fff; margin-bottom: 6px; }
+  .pro .note { color: #ffffffa6; }
+  .docs { display: grid; grid-template-columns: 1.15fr 1fr; gap: 10px; padding: 0 22px; }
+  .docs img { width: 100%; height: 190px; object-fit: cover; object-position: top; display: block; border: 1px solid var(--line); background: #fff; }
+  .rows3 { padding: 8px 22px 0; }
+  .rows3 div { display: grid; grid-template-columns: 96px 1fr; gap: 10px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; line-height: 1.4; }
+  .rows3 b { font-size: 24px; line-height: 1; font-weight: 600; letter-spacing: -.03em; color: var(--red); }
+  .rows3 strong { display: block; font-weight: 600; }
+  .vid { background: var(--ink); color: #fff; padding-bottom: 30px; }
+  .vid .title .eyebrow { color: #fff; opacity: .7; }
+
+  /* v6 */
+  .drs { display: flex; justify-content: center; padding: 4px 0 0; position: relative; overflow: hidden; }
+  .drs img { width: 52%; margin: 0 -9%; display: block; }
+  .drs img:nth-child(2) { position: relative; z-index: 1; }
+  .drs::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 70px; background: linear-gradient(#1d1b1a00, #1d1b1a); z-index: 2; }
+  .names { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 2px 12px 0; text-align: center; font-size: 12px; line-height: 1.3; color: #ffffffd9; }
+  .names b { display: block; color: #fff; font-weight: 600; font-size: 12.5px; white-space: nowrap; }
+  .clinic { padding: 16px 22px 0; font-size: 15px; line-height: 1.4; text-align: center; }
+
+  /* v7 */
+  .trio { display: grid; grid-template-columns: 1.55fr 1fr; grid-template-rows: 1fr 1fr; gap: 6px; padding: 6px 22px 0; height: 330px; }
+  .trio div { background: #2b2826; position: relative; overflow: hidden; }
+  .trio div:first-child { grid-row: span 2; }
+  .trio img { position: absolute; display: block; }
+  .trio .lead img { width: 150%; left: -18%; top: 4%; }
+  .trio .h2 img { width: 250%; left: -80%; top: -6%; }
+  .trio .h3 img { width: 250%; left: -92%; top: -10%; }
+  .trio span { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: 22px 10px 8px; font-size: 12.5px; font-weight: 600; background: linear-gradient(#1d1b1a00, #1d1b1acc 55%); }
+
+  /* v8 */
+  .drv { margin: 6px 22px 0; position: relative; }
+  .drv img { width: 100%; aspect-ratio: 3/2; object-fit: cover; object-position: 50% 30%; display: block; }
+  .drv i { position: absolute; right: 12px; bottom: 12px; width: 44px; height: 44px; border-radius: 50%; background: #fff; }
+  .drv i::after { content: ""; position: absolute; left: 18px; top: 14px; border: 8px solid transparent; border-left: 12px solid var(--ink); }
+  .quote { padding: 18px 22px 0; font-size: 22px; line-height: 1.22; font-weight: 500; letter-spacing: -.02em; }
+  .by { padding: 10px 22px 0; font-size: 13px; line-height: 1.4; color: #ffffffd9; }
+  .by b { color: #fff; font-weight: 600; }
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 22px 0; padding-top: 22px; border-top: 1px solid #ffffff2e; align-items: end; }
+  .duo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; }
+  .duo .big { font-size: 13px; line-height: 1.35; color: #ffffffd9; }
+  .duo .big b { display: block; font-size: 50px; line-height: 1; font-weight: 500; letter-spacing: -.04em; color: #fff; margin-bottom: 8px; }
+  .duo .cap { font-size: 12px; line-height: 1.35; color: #ffffffa6; margin-top: 8px; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #fff; }
+  .pc { background: var(--ground); padding: 8px 12px 18px; text-align: center; font-size: 13.5px; font-weight: 600; line-height: 1.25; }
+  .pc img { width: 100%; aspect-ratio: 1; object-fit: contain; }
+  .pc small { display: block; font-size: 12px; font-weight: 400; color: var(--mute); margin-top: 2px; }
+  .pc u { display: inline-block; margin-top: 10px; text-decoration: none; font-size: 12px; font-weight: 600; color: #fff; background: var(--ink); border-radius: 999px; padding: 7px 16px; }
+  .pc.wide { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; align-items: center; text-align: left; font-size: 19px; padding: 6px 12px 10px; }
+  .pc.wide small { font-size: 13px; }
+
+  /* v9 */
+  .head img { height: 26px; display: block; }
+  .hero { text-align: center; padding: 34px 22px 0; }
+  .hero h2 { font-size: 40px; margin: 10px 0 10px; }
+  .hero p { font-size: 16px; margin: 0 auto 24px; max-width: 280px; }
+  .hero .arch { width: 300px; height: 300px; margin: 0 auto; border-radius: 150px 150px 0 0; padding: 0; display: flex; align-items: flex-end; justify-content: center; overflow: hidden; }
+  .hero .arch img { width: auto; height: 150%; margin: 0 0 -26%; filter: drop-shadow(0 18px 18px #0000001f); mix-blend-mode: normal; }
+  .facts { grid-template-columns: repeat(3, 1fr); padding: 18px 22px 0; text-align: center; }
+  .facts div { padding: 0 6px; border-left: 1px solid var(--line); }
+  .facts div:first-child { border-left: 0; }
+  .facts b { font-size: 16.5px; margin-bottom: 3px; white-space: nowrap; }
+  .cta { margin: 20px 22px 0; }
+  .pc.wide img, .pc .cut { mix-blend-mode: normal; }
+  .len { position: absolute; left: 12px; bottom: 12px; background: #1d1b1acc; color: #fff; font-size: 12px; font-weight: 600; padding: 4px 9px; border-radius: 999px; }
+  .sym { padding-bottom: 34px; }
+  .sym .video img { aspect-ratio: 2/1; }
+  .sym .cap2 { padding: 10px 22px 0; font-size: 13px; color: var(--mute); }
+  .plan td:first-child { text-align: left; white-space: normal; }
+
+  /* v10: 2번·6번 수정 */
+  .hero .arch { width: 318px; height: 318px; border-radius: 159px 159px 0 0; align-items: center; }
+  .hero .arch img { width: 100%; height: 100%; object-fit: contain; margin: 0; filter: none; mix-blend-mode: multiply; }
+  .pc { padding: 10px 10px 20px; }
+  .pc img, .pc.wide img, .pc .cut { width: 100%; aspect-ratio: 1; object-fit: contain; mix-blend-mode: multiply; display: block; }
+  .pc.wide { grid-template-columns: 1.15fr 1fr; gap: 4px; padding: 4px 14px 8px 4px; font-size: 21px; letter-spacing: -.02em; }
+  .pc.wide small { font-size: 13.5px; margin-top: 4px; letter-spacing: 0; }
+  .pc.wide u { margin-top: 14px; font-size: 13px; padding: 9px 20px; }
+
+  /* v11: 병원·약국 나란히 */
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 22px 0; padding-top: 22px; border-top: 1px solid #ffffff2e; }
+  .two img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; }
+  .two b { display: block; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px; color: #ffffffb3; }
+  .two .cap { font-size: 12px; line-height: 1.35; color: #ffffffa6; margin-top: 8px; }
+  .big2 { margin: 22px 22px 0; font-size: 13.5px; line-height: 1.35; color: #ffffffd9; }
+  .big2 b { display: block; font-size: 58px; line-height: 1; font-weight: 500; letter-spacing: -.04em; color: #fff; margin-bottom: 8px; }
+
+  /* v14: 사진 대신 큰 글자 */
+  .words { margin: 26px 22px 0; padding-top: 26px; border-top: 1px solid #ffffff2e; font-size: 52px; line-height: 1; font-weight: 600; letter-spacing: -.04em; text-transform: uppercase; }
+  .words span { display: block; }
+  .words i { font-style: normal; color: #c8323d; }
+  .big2 { margin-top: 26px; }
+
+  /* v15: 사용 순서 칸 정리 + 자간 통일 */
+  .rt { display: grid; grid-template-columns: repeat(4, 1fr); margin: 4px 14px 0; border-top: 1px solid var(--ink); }
+  .rt div { padding: 12px 8px 0; border-left: 1px solid var(--line); }
+  .rt div:first-child { border-left: 0; }
+  .rt img { width: 100%; aspect-ratio: 1; object-fit: contain; margin-bottom: 10px; }
+  .rt b { display: block; font-size: 12px; font-weight: 600; color: var(--red); letter-spacing: .02em; font-variant-numeric: tabular-nums; line-height: 1.2; }
+  .rt em { display: block; font-style: normal; font-size: 15px; font-weight: 600; letter-spacing: -.01em; line-height: 1.25; margin-top: 2px; }
+  /* 자간: 작은 대문자 꼬리표는 한 값으로, 큰 제목은 크기에 맞춰 좁힘, 본문은 0 */
+  .eyebrow, .two b { letter-spacing: .12em; }
+  .head small, .end small { letter-spacing: .12em; }
+  .title h3 { letter-spacing: -.022em; }
+  .hero h2 { letter-spacing: -.03em; }
+  .tex h3 { letter-spacing: -.028em; }
+  .quote { letter-spacing: -.018em; }
+  .words { letter-spacing: -.025em; }
+  .big2 b { letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
+  .facts b, .rows3 b { letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+  .pc, .pc small, .by, .note, .cap2, .big2, .hero p { letter-spacing: 0; }
+  .pc.wide { letter-spacing: -.018em; }
+  .cta, .pc u, .len { letter-spacing: .005em; }
+
+  /* 보기 전용: 설명·번호 없이 시안만 */
+  body { background: #d9d5cf; }
+  .wrap { padding: 28px 16px 60px; }
+  .n, .amz, .slot { display: none; }
+  .drv video, .video video { width: 100%; aspect-ratio: 16/9; display: block; background: #000; object-fit: cover; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="phone">
+    <div class="sec"><span class="n">1</span><div class="head"><img src="img/logo-white.png" alt="PYDERIN"><small>Korean clinic and pharmacy skincare</small></div><div class="nav">PYDERIN ▾</div></div>
+
+    <div class="sec"><span class="n">2</span>
+      <div class="hero"><span class="eyebrow">The signature cream</span><h2>PDRN Lift Cream</h2><p>The firming cream found in Korean clinics.</p><div class="arch"><img src="img/m-cream.jpg" alt=""></div></div>
+      <div class="facts"><div><b>20,000 ppm</b>salmon DNA PDRN</div><div><b>97 kDa</b>low molecular weight</div><div><b>30 ml</b>1.01 fl oz</div></div>
+      <span class="cta">Shop now</span>
+    </div>
+
+    <div class="sec" style="margin-top:28px"><span class="n">3</span><div class="tex"><span class="eyebrow">The texture</span><h3>Lightweight.<br>Non-greasy.<br>Fast-absorbing.</h3></div></div>
+
+    <div class="sec pro"><span class="n">4</span><div class="title"><span class="eyebrow">The professional channel</span><h3>Found in Korean clinics and pharmacies</h3></div>
+      <div class="drv"><video controls playsinline preload="metadata" poster="img/cover-clinic.jpg" src="video/clinic.mp4"></video></div>
+      <div class="quote">“PYDERIN is the perfect partner for our philosophy.”</div>
+      <div class="by"><b>Dr. Sangwook Park</b>, Medical Director, Seorae Cell Clinic, Seoul</div>
+      <div class="words"><span>Clinics<i>.</i></span><span>Pharmacies<i>.</i></span></div>
+      <div class="big2"><b>2,000+</b>pharmacies in Korea carry PYDERIN.<sup>1</sup></div>
+      <div class="note"><sup>1</sup> Company figure reported by Dailypharm, July 22, 2026.</div></div>
+
+    <div class="sec"><span class="n">5</span><div class="title"><span class="eyebrow">The lineup</span><h3>Five PDRN essentials</h3></div></div>
+    <div class="sec"><span class="n">6</span>
+      <div class="cards">
+        <div class="pc wide"><img src="img/m-cream.jpg" alt=""><div>PDRN Lift Cream<small>Firming cream, 30 ml</small><u>Shop now</u></div></div>
+        <div class="pc"><img src="img/m-toner.jpg" alt="">PDRN Lift Toner<small>100 ml</small><u>Shop now</u></div>
+        <div class="pc"><img class="pk" src="img/ampoule.jpg" alt="">PDRN Lift Fit Ampoule<small>30 ml</small><u>Shop now</u></div>
+        <div class="pc"><img class="pk" src="img/mask.jpg" alt="">PDRN Lift Facial Mask<small>5 sheets</small><u>Shop now</u></div>
+        <div class="pc"><img src="img/m-rejuvuster.jpg" alt="">REJUVUSTER Cream+<small>25 ml</small><u>Shop now</u></div>
+      </div></div>
+
+    <div class="sec"><span class="n">7</span><div class="title"><span class="eyebrow">Inside the formula</span><h3>PDRN with the paperwork to show for it</h3></div>
+      <div class="docs"><img src="img/doc-coa.jpg" alt=""><img src="img/doc-origin.jpg" alt=""></div>
+      <div class="rows3"><div><b>99%</b><span><strong>Purity</strong>DNA (PDRN) content confirmed on the supplier certificate of analysis.<sup>2</sup></span></div><div><b>97 kDa</b><span><strong>Low molecular weight</strong>About 150 base pairs.<sup>2</sup></span></div><div><b>Korea</b><span><strong>Origin</strong>Extracted from chum salmon in the Republic of Korea.<sup>3</sup></span></div></div>
+      <div class="note"><sup>2</sup> Genocure certificate of analysis, Derbiome PDRN, April 2025. <sup>3</sup> Genocure certificate of origin, February 2023.</div></div>
+
+    <div class="sec white" style="margin-top:34px;padding-bottom:34px"><span class="n">8</span><div class="title"><span class="eyebrow">How to layer</span><h3>The Lift routine, step by step</h3></div>
+      <div class="rt">
+        <div><img class="pk" src="img/m-toner.jpg" alt=""><b>01</b><em>Toner</em></div>
+        <div><img class="pk" src="img/ampoule.jpg" alt=""><b>02</b><em>Ampoule</em></div>
+        <div><img class="pk" src="img/m-cream.jpg" alt=""><b>03</b><em>Cream</em></div>
+        <div><img class="pk" src="img/mask.jpg" alt=""><b>Weekly</b><em>Mask</em></div>
+      </div></div>
+
+    <div class="sec sym"><span class="n">9</span><div class="title"><span class="eyebrow">Inside PYDERIN</span><h3>Redefine Symposium 2026</h3></div>
+      <div class="video"><video controls playsinline preload="metadata" poster="img/cover-sym.jpg" src="video/symposium.mp4"></video></div>
+      <div class="cap2">PYDERIN's session with doctors and pharmacists, July 21, 2026.</div></div>
+
+    <div class="sec"><span class="n">10</span><div class="end" style="margin-top:0"><img src="img/logo-white.png" alt="PYDERIN" style="height:30px"><small>Korean clinic and pharmacy skincare</small></div></div>
+  </div>
+</div>
+</body>
+</html>
