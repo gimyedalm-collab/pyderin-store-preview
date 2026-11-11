@@ -226,6 +226,12 @@
   .pc.wide { letter-spacing: -.018em; }
   .cta, .pc u, .len { letter-spacing: .005em; }
 
+  /* 줄 정리: 한 줄로 떨어져야 하는 곳은 한 줄, 나머지는 줄 길이를 고르게 */
+  .by, .cap2 { white-space: nowrap; font-size: 12px; }
+  .hero p, .title h3, .pro .title h3, .note, .big2, .quote { text-wrap: balance; }
+  .head small, .end small { font-size: 10px; letter-spacing: .16em; margin-top: 14px; }
+  .end img { margin: 0 auto; display: block; }
+  .end { padding: 36px 22px 34px; }
   /* 보기 전용: 설명·번호 없이 시안만 */
   body { background: #d9d5cf; }
   .wrap { padding: 28px 16px 60px; }
@@ -240,6 +246,8 @@
   .menu a { display: block; padding: 13px 22px; font-size: 13px; font-weight: 600; letter-spacing: .12em; color: var(--ink); text-decoration: none; border-top: 1px solid var(--line); }
   .menu a.cur { color: var(--red); }
   .page img { display: block; }
+  .full p, .band p, .lead, .num div, .who q, .who span, .s4 span, .qa b, .feat b, .pq q, .xt b { text-wrap: balance; }
+  .qa span, .rows span, .rows3 span { text-wrap: pretty; }
   .band { background: var(--red); color: #fff; padding: 30px 22px 28px; text-align: center; }
   .band h2 { font-size: 34px; line-height: 1.04; font-weight: 600; letter-spacing: -.03em; margin: 8px 0 8px; }
   .band p { font-size: 15px; line-height: 1.4; margin: 0; }
@@ -359,7 +367,7 @@
     <div class="sec pro"><span class="n">4</span><div class="title"><span class="eyebrow">The professional channel</span><h3>Found in Korean clinics and pharmacies</h3></div>
       <div class="drv"><video controls playsinline preload="metadata" poster="img/cover-clinic.jpg" src="video/clinic.mp4"></video></div>
       <div class="quote">“PYDERIN is the perfect partner for our philosophy.”</div>
-      <div class="by"><b>Dr. Sangwook Park</b>, Medical Director, Seorae Cell Clinic, Seoul</div>
+      <div class="by"><b>Dr. Sangwook Park</b>, Medical Director, Seorae Cell Clinic</div>
       <div class="words"><span>Clinics<i>.</i></span><span>Pharmacies<i>.</i></span></div>
       <div class="big2"><b>2,000+</b>pharmacies in Korea carry PYDERIN.<sup>1</sup></div>
       <div class="note"><sup>1</sup> Company figure reported by Dailypharm, July 22, 2026.</div></div>
@@ -389,7 +397,7 @@
 
     <div class="sec sym"><span class="n">9</span><div class="title"><span class="eyebrow">Inside PYDERIN</span><h3>Redefine Symposium 2026</h3></div>
       <div class="video"><video controls playsinline preload="metadata" poster="img/cover-sym.jpg" src="video/symposium.mp4"></video></div>
-      <div class="cap2">PYDERIN's session with doctors and pharmacists, July 21, 2026.</div></div>
+      <div class="cap2">With doctors and pharmacists, July 21, 2026.</div></div>
 
     <div class="sec"><span class="n">10</span><div class="end" style="margin-top:0"><img src="img/logo-white.png" alt="PYDERIN" style="height:30px"><small>Korean clinic and pharmacy skincare</small></div></div></div><div class="page" id="shop">
   <div class="sec"><div class="band"><span class="eyebrow">PYDERIN and REJUVUSTER</span><h2>Shop All</h2><p>Every PDRN product in the lineup.</p></div></div>
@@ -430,7 +438,7 @@
   <div class="sec"><div class="end"><img src="img/logo-white.png" alt="PYDERIN" style="height:30px;margin:auto"><small>Korean clinic and pharmacy skincare</small></div></div></div><div class="page" id="about">
   <div class="sec"><div class="band" style="text-align:left;padding:34px 22px 30px"><span class="eyebrow">About us</span><h2 style="font-size:33px">PDRN skincare from Korea's clinics and pharmacies</h2></div>
     <div class="who">
-      <div><img src="img/dr-seorae.jpg" alt="" style="object-position:50% 40%"><p><q>PYDERIN is the perfect partner for our philosophy.</q><span>Dr. Sangwook Park, Medical Director, Seorae Cell Clinic, Seoul</span></p></div>
+      <div><img src="img/dr-seorae.jpg" alt="" style="object-position:50% 40%"><p><q>PYDERIN is the perfect partner for our philosophy.</q><span>Dr. Sangwook Park, Medical Director, Seorae Cell Clinic</span></p></div>
       <div><img src="img/ph-byul.jpg" alt=""><p><q>Not all PDRN is the same.</q><span>Pharmacist, Seoul</span></p></div>
     </div><div class="note">Doctors and pharmacists took part in product development, as reported by Dailypharm, July 23, 2026.</div></div>
   <div class="sec"><p class="lead">PYDERIN is a Korean PDRN skincare brand. The PDRN Lift line is found in skin clinics, and its cream is carried by pharmacies too. REJUVUSTER is the pharmacy line. Both are built on the same documented PDRN.</p></div>
