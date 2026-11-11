@@ -240,6 +240,20 @@
   .n, .amz, .slot { display: none; }
   .drv video, .video video { width: 100%; aspect-ratio: 16/9; display: block; background: #000; object-fit: cover; }
 
+  /* v17(11/11): 아마존 규격 맞춤 — 머리 이미지 3000×600, 작은 칸 정사각, 가로 칸 2:1, 영상은 화면 가로 끝까지 */
+  .head { height: 75px; }
+  .drv, .video { margin: 0; }
+  .end { margin-top: 0; }
+  .pc { aspect-ratio: 1; overflow: hidden; padding: 8px 8px 0; }
+  .pc img, .pc .cut { width: 68%; margin: 0 auto; }
+  .pc.wide { aspect-ratio: 2/1; grid-template-rows: minmax(0, 1fr); padding: 0 14px 0 4px; }
+  .pc.wide img { width: 100%; height: 100%; aspect-ratio: auto; }
+  /* 아마존 글자 칸: 글꼴·색·크기는 아마존이 정함(정렬만 고를 수 있음) */
+  .at { background: #fff; padding: 22px 16px 18px; font-family: "Amazon Ember", Arial, sans-serif; color: #0f1111; letter-spacing: 0; }
+  .at h3 { font-size: 21px; line-height: 1.25; font-weight: 700; margin: 0; }
+  .at p { font-size: 15px; line-height: 1.45; margin: 8px 0 0; }
+  .sp { position: absolute; right: 0; top: 0; z-index: 6; background: #0b62c4; color: #fff; font: 11px/1.5 "Malgun Gothic", sans-serif; font-style: normal; padding: 0 5px; letter-spacing: 0; text-transform: none; white-space: nowrap; }
+
   /* 카테고리 페이지 */
   .page { display: none; } .page.on { display: block; }
   .nav { position: relative; cursor: pointer; }
@@ -296,7 +310,8 @@
   .aznote { font: 11px "Malgun Gothic", sans-serif; color: #777; text-align: center; padding: 8px 0 10px; background: #fff; letter-spacing: 0; }
   /* 다른 라인으로 가는 칸: 사진 반, 글 반 */
   .xt { display: grid; grid-template-columns: 1fr 1fr; background: #fff; color: var(--ink); text-decoration: none; border-top: 1px solid var(--line); }
-  .xt img { width: 100%; height: 100%; aspect-ratio: 4/5; object-fit: cover; }
+  .xt { aspect-ratio: 2/1; grid-template-rows: minmax(0, 1fr); overflow: hidden; }
+  .xt img { width: 100%; height: 100%; object-fit: cover; }
   .xt div { padding: 22px 12px 22px 22px; align-self: center; }
   .xt .eyebrow { color: var(--red); font-size: 11px; }
   .xt b { display: block; font-size: 25px; line-height: 1.06; font-weight: 600; letter-spacing: -.025em; margin: 8px 0 14px; }
@@ -347,10 +362,10 @@
   .feat b { display: block; font-size: 22px; line-height: 1.1; font-weight: 600; letter-spacing: -.02em; margin: 8px 0 12px; }
   .feat u { display: inline-block; text-decoration: none; font-size: 12px; font-weight: 600; color: #fff; background: var(--ink); border-radius: 999px; padding: 7px 15px; }
   .who { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--ink); color: #fff; }
-  .who img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 12%; }
+  .who img { width: 100%; aspect-ratio: 10/9; object-fit: cover; object-position: 50% 12%; }
   .who p { margin: 0; padding: 12px 14px 16px; }
   .who q { display: block; quotes: "“" "”"; font-size: 14.5px; line-height: 1.25; font-weight: 500; letter-spacing: -.01em; }
-  .who span { display: block; font-size: 11.5px; line-height: 1.35; color: #ffffffa6; margin-top: 8px; }
+  .who span { display: block; font-size: 12px; line-height: 1.35; color: #ffffffa6; margin-top: 8px; }
   .who + .note { background: var(--ink); color: #ffffffa6; padding: 4px 22px 20px; font-size: 11px; }
   /* ABOUT v4: 숫자 카드(글 왼쪽, 사진 오른쪽)와 쓰이는 곳 3카드 */
   .dc { display: grid; grid-template-columns: 1fr 1fr; background: #fff; border-top: 2px solid var(--ground); }
@@ -363,9 +378,9 @@
   .n3 div { font-size: 12px; line-height: 1.3; color: var(--mute); padding: 4px 6px; border-left: 1px solid var(--line); }
   .n3 div:first-child { border-left: 0; }
   .n3 b { display: block; font-size: 27px; font-weight: 600; color: var(--red); letter-spacing: -.03em; line-height: 1.1; white-space: nowrap; margin-bottom: 4px; font-variant-numeric: tabular-nums; }
-  .tx { position: relative; overflow: hidden; background: #e9e4de; }
+  .tx { position: relative; overflow: hidden; background: #dfd9d6; }
   .tx > img { width: 100%; object-fit: cover; display: block; }
-  .tx .ov { position: absolute; left: 22px; right: 22px; top: 28px; color: var(--ink); }
+  .tx .ov { padding: 30px 22px 0; color: var(--ink); }
   .tx .eyebrow { color: var(--red); }
   .tx b { display: block; font-size: 60px; line-height: 1; font-weight: 600; letter-spacing: -.04em; margin: 12px 0 8px; font-variant-numeric: tabular-nums; }
   .tx b small { font-size: .38em; letter-spacing: 0; font-weight: 600; }
@@ -373,46 +388,45 @@
   .ap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0 22px 30px; }
   .ap img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 6px; }
   .ap strong { display: block; font-size: 13.5px; font-weight: 600; line-height: 1.2; letter-spacing: -.01em; margin: 9px 0 3px; }
-  .ap span { display: block; font-size: 11.5px; line-height: 1.32; color: var(--mute); }
+  .ap span { display: block; font-size: 12px; line-height: 1.32; color: var(--mute); }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="phone">
-    <div class="sec"><span class="n">1</span><div class="head"><img src="img/logo-white.png" alt="PYDERIN"><small>Korean clinic and pharmacy skincare</small></div><div class="nav" style="display:flex;align-items:center;gap:18px;padding:9px 16px;font-family:Arial,sans-serif;font-weight:400;letter-spacing:0"><span style="font-size:22px;line-height:1;letter-spacing:1px">&#8943;</span><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#1d1b1a" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg><span style="margin-left:auto;border:1px solid #888;border-radius:999px;padding:5px 14px;font-size:13px">+ Follow</span><div class="menu"><a href="#home">HOME</a><a href="#shop">SHOP ALL</a><a href="#pyderin">PYDERIN</a><a href="#rejuvuster">REJUVUSTER</a><a href="#about">ABOUT US</a></div></div></div><div class="page" id="home">
+    <div class="sec"><span class="n">1</span><div class="head" data-t="머리 이미지 3000×600"><img src="img/logo-white.png" alt="PYDERIN"><small>Korean clinic and pharmacy skincare</small></div><div class="nav" style="display:flex;align-items:center;gap:18px;padding:9px 16px;font-family:Arial,sans-serif;font-weight:400;letter-spacing:0"><span style="font-size:22px;line-height:1;letter-spacing:1px">&#8943;</span><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#1d1b1a" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg><span style="margin-left:auto;border:1px solid #888;border-radius:999px;padding:5px 14px;font-size:13px">+ Follow</span><div class="menu"><a href="#home">HOME</a><a href="#shop">SHOP ALL</a><a href="#pyderin">PYDERIN</a><a href="#rejuvuster">REJUVUSTER</a><a href="#about">ABOUT US</a></div></div></div><div class="page" id="home">
 
-    <div class="sec"><span class="n">2</span>
-      <div class="hero"><span class="eyebrow">The signature cream</span><h2>PDRN Lift Cream</h2><p>The firming cream found in Korean clinics.</p><div class="arch"><img src="img/m-cream.jpg" alt=""></div></div>
-      <div class="facts"><div><b>20,000 ppm</b>salmon DNA PDRN</div><div><b>97 kDa</b>low molecular weight</div><div><b>30 ml</b>1.01 fl oz</div></div>
-      <span class="cta">Shop now</span>
-    </div>
+    <div class="sec" data-t="이미지"><div class="hero"><span class="eyebrow">The signature cream</span><h2>PDRN Lift Cream</h2><p>The firming cream found in Korean clinics.</p><div class="arch"><img src="img/m-cream.jpg" alt=""></div></div></div>
+    <div class="sec" data-t="이미지" style="padding-bottom:22px"><div class="facts"><div><b>20,000 ppm</b>salmon DNA PDRN</div><div><b>97 kDa</b>low molecular weight</div><div><b>30 ml</b>1.01 fl oz</div></div>
+      <span class="cta">Shop now</span></div>
 
-    <div class="sec" style="margin-top:28px"><span class="n">3</span><div class="tex"><span class="eyebrow">The texture</span><h3>Rich and dense.<br>Radiant glow.<br>A snug barrier.</h3></div></div>
+    <div class="sec" data-t="이미지"><div class="tex"><span class="eyebrow">The texture</span><h3>Rich and dense.<br>Radiant glow.<br>A snug barrier.</h3></div></div>
 
-    <div class="sec pro"><span class="n">4</span><div class="title"><span class="eyebrow">The professional channel</span><h3>Found in Korean clinics and pharmacies</h3></div>
-      <div class="drv"><video controls playsinline preload="metadata" poster="img/cover-clinic.jpg" src="video/clinic.mp4"></video></div>
-      <div class="quote">“PYDERIN is the perfect partner for our philosophy.”</div>
+    <div class="sec pro" data-t="이미지" style="padding-bottom:22px"><div class="title"><span class="eyebrow">The professional channel</span><h3>Found in Korean clinics and pharmacies</h3></div></div>
+    <div class="sec" data-t="영상"><div class="drv"><video controls playsinline preload="metadata" poster="img/cover-clinic.jpg" src="video/clinic.mp4"></video></div></div>
+    <div class="sec pro" data-t="이미지"><div class="quote" style="padding-top:26px">“PYDERIN is the perfect partner for our philosophy.”</div>
       <div class="by"><b>Dr. Sangwook Park</b>, Medical Director, Seorae Cell Clinic</div>
       <div class="words"><span>Clinics<i>.</i></span><span>Pharmacies<i>.</i></span></div>
       <div class="big2"><b>2,000+</b>pharmacies in Korea carry PYDERIN.<sup>1</sup></div>
       <div class="note"><sup>1</sup> Company figure reported by Dailypharm, July 22, 2026.</div></div>
 
-    <div class="sec"><span class="n">5</span><div class="title"><span class="eyebrow">The lineup</span><h3>Five PDRN essentials</h3></div></div>
-    <div class="sec"><span class="n">6</span>
+    <div class="sec at" data-t="글자"><h3>The PDRN lineup</h3></div>
+    <div class="sec">
       <div class="cards">
-        <div class="pc wide"><img src="img/c-cream.png" alt="" style="transform:scale(1.25)"><div>PDRN Lift Cream<small>Firming cream, 30 ml</small><u>Shop now</u></div></div>
-        <div class="pc"><img src="img/m-toner.jpg" alt="">PDRN Lift Toner<small>100 ml</small><u>Shop now</u></div>
-        <div class="pc"><img class="pk" src="img/ampoule.jpg" alt="">PDRN Lift Fit Ampoule<small>30 ml</small><u>Shop now</u></div>
-        <div class="pc"><img class="pk" src="img/mask.jpg" alt="">PDRN Lift Facial Mask<small>5 sheets</small><u>Shop now</u></div>
-        <div class="pc"><img src="img/m-rejuvuster.jpg" alt="">REJUVUSTER Cream+<small>25 ml</small><u>Shop now</u></div>
+        <div class="pc wide" data-t="이미지 1500×750"><img src="img/c-cream.png" alt="" style="transform:scale(1.5)"><div>PDRN Lift Cream<small>Firming cream, 30 ml</small><u>Shop now</u></div></div>
+        <div class="pc" data-t="이미지 750×750"><img src="img/m-toner.jpg" alt="">PDRN Lift Toner<small>100 ml</small></div>
+        <div class="pc" data-t="이미지 750×750"><img class="pk" src="img/ampoule.jpg" alt="">PDRN Lift Fit Ampoule<small>30 ml</small></div>
+        <div class="pc" data-t="이미지 750×750"><img class="pk" src="img/mask.jpg" alt="">PDRN Lift Facial Mask<small>5 sheets</small></div>
+        <div class="pc" data-t="이미지 750×750"><img src="img/m-rejuvuster.jpg" alt="">REJUVUSTER Cream+<small>25 ml</small></div>
       </div></div>
 
-    <div class="sec"><span class="n">7</span><div class="title"><span class="eyebrow">Inside the formula</span><h3>PDRN with the paperwork to show for it</h3></div>
-      <div class="docs"><img src="img/doc-coa.jpg" alt=""><img src="img/doc-origin.jpg" alt=""></div>
-      <div class="rows3"><div><b>99%</b><span><strong>Purity</strong>DNA (PDRN) content confirmed on the supplier certificate of analysis.<sup>2</sup></span></div><div><b>97 kDa</b><span><strong>Low molecular weight</strong>About 150 base pairs.<sup>2</sup></span></div><div><b>Korea</b><span><strong>Origin</strong>Extracted from chum salmon in the Republic of Korea.<sup>3</sup></span></div></div>
+    <div class="sec at" data-t="글자"><h3>PDRN with the paperwork to show for it</h3></div>
+    <div class="sec" data-t="이미지" style="padding:22px 0"><div class="docs"><img src="img/doc-coa.jpg" alt=""><img src="img/doc-origin.jpg" alt=""></div></div>
+    <div class="sec white" data-t="이미지" style="padding-bottom:22px"><div class="rows3"><div><b>99%</b><span><strong>Purity</strong>DNA (PDRN) content confirmed on the supplier certificate of analysis.<sup>2</sup></span></div><div><b>97 kDa</b><span><strong>Low molecular weight</strong>About 150 base pairs.<sup>2</sup></span></div><div><b>Korea</b><span><strong>Origin</strong>Extracted from chum salmon in the Republic of Korea.<sup>3</sup></span></div></div>
       <div class="note"><sup>2</sup> Genocure certificate of analysis, Derbiome PDRN, April 2025. <sup>3</sup> Genocure certificate of origin, February 2023.</div></div>
 
-    <div class="sec white" style="margin-top:34px;padding-bottom:34px"><span class="n">8</span><div class="title"><span class="eyebrow">How to layer</span><h3>The Lift routine, step by step</h3></div>
+    <div class="sec at" data-t="글자"><h3>The Lift routine, step by step</h3></div>
+    <div class="sec white" data-t="이미지" style="padding:16px 0 26px">
       <div class="rt">
         <div><img class="pk" src="img/m-toner.jpg" alt=""><b>01</b><em>Toner</em></div>
         <div><img class="pk" src="img/ampoule.jpg" alt=""><b>02</b><em>Ampoule</em></div>
@@ -420,73 +434,70 @@
         <div><img class="pk" src="img/mask.jpg" alt=""><b>Weekly</b><em>Mask</em></div>
       </div></div>
 
-    <div class="sec sym"><span class="n">9</span><div class="title"><span class="eyebrow">Inside PYDERIN</span><h3>Redefine Symposium 2026</h3></div>
-      <div class="video"><video controls playsinline preload="metadata" poster="img/cover-sym.jpg" src="video/symposium.mp4"></video></div>
-      <div class="cap2">With doctors and pharmacists, July 21, 2026.</div></div>
+    <div class="sec at" data-t="글자"><h3>Redefine Symposium 2026</h3><p>With doctors and pharmacists, July 21, 2026.</p></div>
+    <div class="sec" data-t="영상"><div class="video"><video controls playsinline preload="metadata" poster="img/cover-sym.jpg" src="video/symposium.mp4"></video></div></div>
 
-    <div class="sec"><span class="n">10</span><div class="end" style="margin-top:0"><img src="img/logo-white.png" alt="PYDERIN" style="height:30px"><small>Korean clinic and pharmacy skincare</small></div></div></div><div class="page" id="shop">
-  <div class="sec"><div class="band"><span class="eyebrow">PYDERIN and REJUVUSTER</span><h2>Shop All</h2><p>Every PDRN product in the lineup.</p></div></div>
-  <div class="sec az"><div class="grid"><div class="card"><img class="pk" src="img/m-cream.jpg" alt="">PYDERIN PDRN Lift Cream, 30 ml<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div><div class="card"><img class="pk" src="img/m-toner.jpg" alt="">PYDERIN PDRN Lift Toner, 100 ml<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div><div class="card"><img class="pk" src="img/ampoule.jpg" alt="">PYDERIN PDRN Lift Fit Ampoule, 30 ml<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div><div class="card"><img class="pk" src="img/mask.jpg" alt="">PYDERIN PDRN Lift Facial Mask, 5 sheets<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div><div class="card"><img class="pk" src="img/m-rejuvuster.jpg" alt="">PYDERIN REJUVUSTER Cream+, 25 ml<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div></div><div class="aznote">아마존 상품 목록 칸 — 사진·가격·별점·버튼은 아마존이 자동으로 채움</div></div>
-  <div class="sec"><div class="end"><img src="img/logo-white.png" alt="PYDERIN" style="height:30px;margin:auto"><small>Korean clinic and pharmacy skincare</small></div></div></div><div class="page" id="pyderin">
-  <div class="sec full"><img src="img/v3/lift-blocks.jpg" alt="" style="aspect-ratio:390/610;object-position:50% 100%">
+    <div class="sec" data-t="이미지"><div class="end"><img src="img/logo-white.png" alt="PYDERIN" style="height:30px"><small>Korean clinic and pharmacy skincare</small></div></div></div><div class="page" id="shop">
+  <div class="sec" data-t="이미지"><div class="band"><span class="eyebrow">PYDERIN and REJUVUSTER</span><h2>Shop All</h2><p>Every PDRN product in the lineup.</p></div></div>
+  <div class="sec az" data-t="상품 목록(아마존)"><div class="grid"><div class="card"><img class="pk" src="img/m-cream.jpg" alt="">PYDERIN PDRN Lift Cream, 30 ml<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div><div class="card"><img class="pk" src="img/m-toner.jpg" alt="">PYDERIN PDRN Lift Toner, 100 ml<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div><div class="card"><img class="pk" src="img/ampoule.jpg" alt="">PYDERIN PDRN Lift Fit Ampoule, 30 ml<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div><div class="card"><img class="pk" src="img/mask.jpg" alt="">PYDERIN PDRN Lift Facial Mask, 5 sheets<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div><div class="card"><img class="pk" src="img/m-rejuvuster.jpg" alt="">PYDERIN REJUVUSTER Cream+, 25 ml<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div></div><div class="aznote">아마존 상품 목록 칸 — 사진·가격·별점·버튼은 아마존이 자동으로 채움</div></div>
+  <div class="sec" data-t="이미지"><div class="end"><img src="img/logo-white.png" alt="PYDERIN" style="height:30px;margin:auto"><small>Korean clinic and pharmacy skincare</small></div></div></div><div class="page" id="pyderin">
+  <div class="sec full" data-t="이미지"><img src="img/v3/lift-blocks.jpg" alt="" style="aspect-ratio:1680/2400;object-position:50% 100%">
     <div class="ov"><span class="eyebrow">The Lift line</span><h2>PYDERIN<br>PDRN Lift</h2><p>The PDRN line found in Korean skin clinics.</p></div></div>
-  <div class="sec"><div class="title"><span class="eyebrow">The four steps</span><h3>What each one does</h3></div>
-    <div class="s4">
-      <div><b>01</b><strong>PDRN Lift Toner</strong><span>The first layer. Hydrates and preps skin for the steps that follow.</span></div>
-      <div><b>02</b><strong>PDRN Lift Fit Ampoule</strong><span>The concentrated step. A lightweight PDRN serum.</span></div>
-      <div><b>03</b><strong>PDRN Lift Cream</strong><span>The signature firming cream.</span></div>
-      <div><b>Weekly</b><strong>PDRN Lift Facial Mask</strong><span>The weekly sheet mask. Five sheets per box.</span></div>
-    </div></div>
-  <div class="sec tx" style="margin-top:34px"><img src="img/v4/tex-ribbon.jpg" alt="PDRN Lift Cream texture" style="aspect-ratio:390/470;object-position:42% 50%">
-    <div class="ov"><span class="eyebrow">The signature: PDRN Lift Cream</span><b>20,000<small> ppm</small></b><p>of salmon DNA PDRN in a rich, dense cream.</p></div></div>
-  <div class="sec"><div class="title"><span class="eyebrow">Shop the line</span><h3>PDRN Lift</h3></div></div>
-  <div class="sec az"><div class="grid"><div class="card"><img class="pk" src="img/m-cream.jpg" alt="">PYDERIN PDRN Lift Cream, 30 ml<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div><div class="card"><img class="pk" src="img/m-toner.jpg" alt="">PYDERIN PDRN Lift Toner, 100 ml<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div><div class="card"><img class="pk" src="img/ampoule.jpg" alt="">PYDERIN PDRN Lift Fit Ampoule, 30 ml<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div><div class="card"><img class="pk" src="img/mask.jpg" alt="">PYDERIN PDRN Lift Facial Mask, 5 sheets<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div></div><div class="aznote">아마존 상품 목록 칸 — 사진·가격·별점·버튼은 아마존이 자동으로 채움</div></div>
-  <a class="xt" href="#rejuvuster"><div><span class="eyebrow">The Korean pharmacy line</span><b>REJUVUSTER<br>Cream+</b><u>Explore</u></div><img src="img/v3/rj-swatch.jpg" alt="" style="object-position:50% 40%"></a>
-  <div class="sec"><div class="end"><img src="img/logo-white.png" alt="PYDERIN" style="height:30px;margin:auto"><small>Korean clinic and pharmacy skincare</small></div></div></div><div class="page" id="rejuvuster">
-  <div class="sec full" style="background:#eceaf0"><div style="text-align:center;padding:32px 22px 0"><span class="eyebrow">The Korean pharmacy line</span><h2>REJUVUSTER<br>Cream+</h2><p style="margin:auto;max-width:290px">The PDRN cream carried by pharmacies across Korea.</p></div>
-    <img src="img/v3/rj-three.jpg" alt="" style="aspect-ratio:390/470;object-position:50% 78%;-webkit-mask-image:linear-gradient(#0000,#000 16%);mask-image:linear-gradient(#0000,#000 16%)"></div>
-  <div class="sec" style="background:#fff;padding-bottom:6px"><div class="f3"><div><b>99%</b>PDRN purity<sup>1</sup></div><div><b>97 kDa</b>low molecular weight<sup>1</sup></div><div><b>25 ml</b>0.84 fl oz</div></div>
-    <span class="cta" style="margin-top:0">Shop now</span><div style="height:22px"></div></div>
-  <div class="sec"><img src="img/v3/rj-drops.jpg" alt="" style="width:100%;aspect-ratio:3/2;object-fit:cover">
+  <div class="sec at" data-t="글자"><h3>What each one does</h3>
+    <p>Step 1. PDRN Lift Toner: the first layer. Hydrates and preps skin for the steps that follow.</p>
+    <p>Step 2. PDRN Lift Fit Ampoule: the concentrated step. A lightweight PDRN serum.</p>
+    <p>Step 3. PDRN Lift Cream: the signature firming cream.</p>
+    <p>Weekly. PDRN Lift Facial Mask: a sheet mask, five per box.</p></div>
+  <div class="sec tx" data-t="이미지"><div class="ov"><span class="eyebrow">The signature: PDRN Lift Cream</span><b>20,000<small> ppm</small></b><p>of salmon DNA PDRN in a rich, dense cream.</p></div><img src="img/v4/lift-flat.jpg" alt="PYDERIN PDRN Lift Cream on its texture" style="aspect-ratio:390/375;object-position:50% 62%"></div>
+  <div class="sec at" data-t="글자"><h3>Shop PDRN Lift</h3></div>
+  <div class="sec az" data-t="상품 목록(아마존)"><div class="grid"><div class="card"><img class="pk" src="img/m-cream.jpg" alt="">PYDERIN PDRN Lift Cream, 30 ml<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div><div class="card"><img class="pk" src="img/m-toner.jpg" alt="">PYDERIN PDRN Lift Toner, 100 ml<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div><div class="card"><img class="pk" src="img/ampoule.jpg" alt="">PYDERIN PDRN Lift Fit Ampoule, 30 ml<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div><div class="card"><img class="pk" src="img/mask.jpg" alt="">PYDERIN PDRN Lift Facial Mask, 5 sheets<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div></div><div class="aznote">아마존 상품 목록 칸 — 사진·가격·별점·버튼은 아마존이 자동으로 채움</div></div>
+  <a class="xt" data-t="이미지 1500×750" href="#rejuvuster"><div><span class="eyebrow">The Korean pharmacy line</span><b>REJUVUSTER<br>Cream+</b><u>Explore</u></div><img src="img/v3/rj-swatch-w.jpg" alt="" style="object-position:50% 46%"></a>
+  <div class="sec" data-t="이미지"><div class="end"><img src="img/logo-white.png" alt="PYDERIN" style="height:30px;margin:auto"><small>Korean clinic and pharmacy skincare</small></div></div></div><div class="page" id="rejuvuster">
+  <div class="sec full" data-t="이미지" style="background:#eceaf0"><div style="text-align:center;padding:32px 22px 0"><span class="eyebrow">The Korean pharmacy line</span><h2>REJUVUSTER<br>Cream+</h2><p style="margin:auto;max-width:290px">The PDRN cream carried by pharmacies across Korea.</p></div>
+    <img src="img/v3/rj-three.jpg" alt="" style="aspect-ratio:390/355;object-position:50% 78%;-webkit-mask-image:linear-gradient(#0000,#000 16%);mask-image:linear-gradient(#0000,#000 16%)"></div>
+  <div class="sec" data-t="이미지" style="background:#fff;padding-bottom:20px"><div class="f3"><div><b>99%</b>PDRN purity<sup>1</sup></div><div><b>97 kDa</b>low molecular weight<sup>1</sup></div><div><b>25 ml</b>0.84 fl oz</div></div>
+    <span class="cta" style="margin-top:0">Shop now</span>
+    <div class="note"><sup>1</sup> Genocure certificate of analysis, April 2025.</div></div>
+  <div class="sec" data-t="이미지"><img src="img/v3/rj-drops.jpg" alt="" style="width:100%;aspect-ratio:3/2;object-fit:cover">
     <div class="pq" style="padding:22px 22px 26px"><span class="eyebrow" style="color:var(--red);margin-bottom:8px">The texture</span><q style="quotes:none">Rich, buttery cream with deep hydration.</q></div></div>
-  <div class="sec dark"><div class="title"><span class="eyebrow">Behind the counter</span><h3>Three things pharmacists check in PDRN</h3></div>
-    <div class="rows">
-      <div><b>01</b><span><strong>Source</strong>Extracted from chum salmon in the Republic of Korea.</span></div>
-      <div><b>02</b><span><strong>Purity</strong>99% DNA (PDRN) content on the supplier certificate of analysis.</span></div>
-      <div><b>03</b><span><strong>Molecular size</strong>97 kDa, low molecular weight.</span></div>
-    </div>
-    <div class="note"><sup>1</sup> Genocure certificate of analysis, April 2025, and certificate of origin, February 2023.</div></div>
-  <div class="sec feat"><img src="img/pick/p11.jpg" alt="" style="object-position:50% 15%"><div><b style="font-size:19px;font-weight:500;margin-top:0">“When I judge absorption, I look at molecular size first.”</b><span style="font-size:12px;color:var(--mute)">Pharmacist, Seoul</span></div></div>
-  <div class="sec"><div class="title" style="padding-top:30px"><span class="eyebrow">Shop the line</span><h3>REJUVUSTER</h3></div></div>
-  <div class="sec az"><div class="grid"><div class="card"><img class="pk" src="img/m-rejuvuster.jpg" alt="">PYDERIN REJUVUSTER Cream+, 25 ml<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div></div><div class="aznote">아마존 상품 목록 칸 — 사진·가격·별점·버튼은 아마존이 자동으로 채움</div></div>
-  <a class="xt" href="#pyderin"><div><span class="eyebrow">The Lift line</span><b>PYDERIN<br>PDRN Lift</b><u>Explore</u></div><img src="img/v3/lift-trio.jpg" alt="" style="object-position:55% 60%"></a>
-  <div class="sec"><div class="end"><img src="img/logo-white.png" alt="PYDERIN" style="height:30px;margin:auto"><small>Korean clinic and pharmacy skincare</small></div></div></div><div class="page" id="about">
-  <div class="sec"><div class="band" style="text-align:left;padding:34px 22px 30px"><span class="eyebrow">About us</span><h2 style="font-size:33px;margin-bottom:12px;text-wrap:balance">PDRN skincare from Korea's clinics and pharmacies</h2><p>Found in Korean skin clinics.<br>Carried by pharmacies across Korea.</p></div>
+  <div class="sec at" data-t="글자"><h3>Three things pharmacists check in PDRN</h3>
+    <p>Source: extracted from chum salmon in the Republic of Korea.</p>
+    <p>Purity: 99% DNA (PDRN) content on the supplier's certificate of analysis.</p>
+    <p>Molecular size: 97 kDa, low molecular weight.</p></div>
+  <div class="sec feat" data-t="이미지"><img src="img/pick/p11.jpg" alt="" style="object-position:50% 15%"><div><b style="font-size:19px;font-weight:500;margin-top:0">“When I judge absorption, I look at molecular size first.”</b><span style="font-size:12px;color:var(--mute)">Pharmacist, Seoul</span></div></div>
+  <div class="sec at" data-t="글자"><h3>Shop REJUVUSTER</h3></div>
+  <div class="sec az" data-t="상품 목록(아마존)"><div class="grid"><div class="card"><img class="pk" src="img/m-rejuvuster.jpg" alt="">PYDERIN REJUVUSTER Cream+, 25 ml<br><span class="stars">★★★★★</span><span class="price">Price shown by Amazon</span><span class="buy">Add to Cart</span></div></div><div class="aznote">아마존 상품 목록 칸 — 사진·가격·별점·버튼은 아마존이 자동으로 채움</div></div>
+  <a class="xt" data-t="이미지 1500×750" href="#pyderin"><div><span class="eyebrow">The Lift line</span><b>PYDERIN<br>PDRN Lift</b><u>Explore</u></div><img src="img/v3/lift-trio.jpg" alt="" style="object-position:55% 60%"></a>
+  <div class="sec" data-t="이미지"><div class="end"><img src="img/logo-white.png" alt="PYDERIN" style="height:30px;margin:auto"><small>Korean clinic and pharmacy skincare</small></div></div></div><div class="page" id="about">
+  <div class="sec" data-t="이미지"><div class="band" style="text-align:left;padding:28px 22px 24px"><span class="eyebrow">About us</span><h2 style="font-size:33px;margin-bottom:12px;text-wrap:balance">PDRN skincare from Korea's clinics and pharmacies</h2><p>Found in Korean skin clinics.<br>Carried by pharmacies across Korea.</p></div>
     <div class="who">
       <div><img src="img/dr-park.jpg" alt=""><p><q>PYDERIN is the perfect partner for our philosophy.</q><span>Dr. Sangwook Park, Medical Director, Seorae Cell Clinic</span></p></div>
       <div><img src="img/pick/p13.jpg" alt="" style="object-position:50% 18%"><p><q>Only 99% high-purity PDRN from Korean chum salmon.</q><span>Pharmacist, Seoul</span></p></div>
     </div></div>
-  <div class="sec" style="background:var(--ground)"><div class="title" style="padding-bottom:26px"><span class="eyebrow">Our approach</span><h3>Every number,<br>on paper.</h3><p style="margin:10px 0 0;font-size:14px;line-height:1.45;color:var(--mute)">One PDRN from Korean chum salmon. Purity and molecular weight come from the supplier's certificates.<sup>1</sup></p></div></div>
-  <div class="sec">
+  <div class="sec at" data-t="글자"><h3>Every number, on paper.</h3><p>One PDRN from Korean chum salmon. Purity and molecular weight come from the supplier's certificates.</p></div>
+  <div class="sec" data-t="이미지" style="background:#fff">
     <img src="img/v3/lift-ledge.jpg" alt="PYDERIN PDRN Lift Cream" style="width:100%;aspect-ratio:390/400;object-fit:cover;object-position:50% 30%;background:#fff">
     <div class="n3"><div><b>99%</b>PDRN purity<sup>1</sup></div><div><b>97 <span style="text-transform:none">kDa</span></b>low molecular weight<sup>1</sup></div><div><b>20,000</b>ppm PDRN in<br>Lift Cream</div></div>
-    <div class="note" style="background:#fff;padding:10px 22px 16px;font-size:11px"><sup>1</sup> Genocure certificate of analysis, April 2025, and certificate of origin, February 2023.</div></div>
-  <div class="sec" style="background:var(--ground);border-top:2px solid #fff"><div class="title" style="padding-top:34px"><span class="eyebrow">In Korea</span><h3>Where PYDERIN is used</h3></div>
+    <div class="note" style="padding:10px 22px 16px"><sup>1</sup> Genocure certificate of analysis, April 2025, and certificate of origin, February 2023.</div></div>
+  <div class="sec at" data-t="글자"><h3>Where PYDERIN is used</h3></div>
+  <div class="sec" data-t="이미지" style="background:var(--ground);padding-top:22px">
     <div class="ap">
       <div><img src="img/pick/c5.jpg" alt=""><strong>In skin clinics</strong><span>On the counter at Korean skin clinics.</span></div>
       <div><img src="img/pick/p6.jpg" alt="" style="object-position:30% 50%"><strong>At 2,000+ pharmacies</strong><span>Explained by pharmacists across Korea.</span></div>
       <div><img src="img/hall.jpg" alt="" style="object-position:62% 50%"><strong>With professionals</strong><span>Shared at the 2026 PYDERIN Symposium.</span></div>
     </div></div>
-  <div class="sec"><div class="title" style="background:#fff;padding-bottom:18px"><span class="eyebrow">Explore the lines</span><h3>Built on documented PDRN</h3></div>
-    <div class="tiles t2" style="margin-top:0"><a href="#pyderin"><img src="img/v3/lift-blocks2.jpg" alt="" style="object-position:50% 45%"><div><span class="eyebrow">The Lift line</span><b>PYDERIN</b></div><u>Explore</u></a><a href="#rejuvuster"><img src="img/v3/rj-stack.jpg" alt="" style="object-position:50% 85%"><div><span class="eyebrow">The Korean pharmacy line</span><b>REJUVUSTER</b></div><u>Explore</u></a></div></div>
-  <div class="sec"><div class="end"><img src="img/logo-white.png" alt="PYDERIN" style="height:30px;margin:auto"><small>Korean clinic and pharmacy skincare</small></div></div></div>
+  <div class="sec at" data-t="글자"><h3>Explore the lines</h3></div>
+  <a class="xt" data-t="이미지 1500×750" href="#pyderin"><div><span class="eyebrow">The Lift line</span><b>PYDERIN<br>PDRN Lift</b><u>Explore</u></div><img src="img/v3/lift-blocks2.jpg" alt="" style="object-position:50% 45%"></a>
+  <a class="xt" data-t="이미지 1500×750" href="#rejuvuster"><div><span class="eyebrow">The Korean pharmacy line</span><b>REJUVUSTER<br>Cream+</b><u>Explore</u></div><img src="img/v3/rj-stack.jpg" alt="" style="object-position:50% 85%"></a>
+  <div class="sec" data-t="이미지"><div class="end"><img src="img/logo-white.png" alt="PYDERIN" style="height:30px;margin:auto"><small>Korean clinic and pharmacy skincare</small></div></div></div>
   </div>
 </div>
 <script>
 var ids=['home','shop','pyderin','rejuvuster','about'],menu=document.querySelector('.menu');
+function spec(){if(!/spec/.test(location.search))return;document.querySelectorAll('[data-t]').forEach(function(e){if(!e.offsetWidth||e.querySelector(':scope>.sp'))return;var r=e.getBoundingClientRect(),t=e.dataset.t,h=Math.round(r.height/r.width*1680);if(t=='이미지')t+=' 1680×'+h+(h>2400?' 초과':'');var s=document.createElement('i');s.className='sp';s.textContent=t;if(getComputedStyle(e).position=='static')e.style.position='relative';e.style.outline='1px dashed #0b62c4';e.style.outlineOffset='-1px';e.appendChild(s)})}
 function show(){var h=location.hash.slice(1);if(ids.indexOf(h)<0)h='home';
  ids.forEach(function(i){document.getElementById(i).classList.toggle('on',i==h);document.querySelector('.menu a[href="#'+i+'"]').classList.toggle('cur',i==h)});
- menu.classList.remove('on');document.querySelectorAll('video').forEach(function(v){v.pause()});window.scrollTo(0,0)}
+ spec();menu.classList.remove('on');document.querySelectorAll('video').forEach(function(v){v.pause()});window.scrollTo(0,0)}
 document.querySelector('.nav').addEventListener('click',function(e){if(!e.target.closest('.menu'))menu.classList.toggle('on')});
 addEventListener('hashchange',show);show();
 </script>
