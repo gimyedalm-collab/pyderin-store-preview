@@ -253,7 +253,17 @@
   .at h3 { font-size: 21px; line-height: 1.25; font-weight: 700; margin: 0; }
   .at p { font-size: 15px; line-height: 1.45; margin: 8px 0 0; }
   .sp { position: absolute; right: 0; top: 0; z-index: 6; background: #0b62c4; color: #fff; font: 11px/1.5 "Malgun Gothic", sans-serif; font-style: normal; padding: 0 5px; letter-spacing: 0; text-transform: none; white-space: nowrap; }
-
+.clin { display: grid; grid-template-columns: 1fr; gap: 16px; padding: 0 22px; }
+.clin figure { margin: 0; }
+.clin figure > div { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+.clin img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+.clin span { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 4px; }
+.clin i { font-style: normal; font-size: 10px; color: var(--mute); }
+.clin figcaption { font-size: 12px; font-weight: 600; line-height: 1.3; margin-top: 6px; }
+.clin-big { display: grid; grid-template-columns: 96px 1fr; gap: 10px; align-items: center; margin: 18px 22px 0; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 14px; line-height: 1.4; }
+.clin-big b { font-size: 34px; line-height: 1; font-weight: 600; letter-spacing: -.03em; color: var(--red); }
+.clin-list { list-style: none; margin: 14px 22px 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.clin-list li { font-size: 12px; border: 1px solid var(--line); border-radius: 999px; padding: 5px 10px; }
   /* 카테고리 페이지 */
   .page { display: none; } .page.on { display: block; }
   .nav { position: relative; cursor: pointer; }
@@ -403,8 +413,11 @@
 
     <div class="sec" data-t="이미지"><div class="tex"><span class="eyebrow">The texture</span><h3>Rich and dense.<br>Radiant glow.<br>A snug barrier.</h3></div></div>
 
-    <div class="sec white" data-t="이미지"><div class="title" style="padding-bottom:4px"><span class="eyebrow">Clinically tested</span><h3>Tested on 22 women for two weeks</h3></div><div class="rows3"><div><b>+696%</b><span><strong>Skin hydration</strong>Moisture across 10 skin layers after one use.<sup>*</sup></span></div><div><b>&minus;32%</b><span><strong>Look of smile lines</strong>Visible line area at the nasolabial folds after 2 weeks, by 3D imaging.<sup>*</sup></span></div><div><b>+4%</b><span><strong>Skin elasticity</strong>Forehead, after 2 weeks.<sup>*</sup></span></div><div><b>0</b><span><strong>Skin reactions</strong>None observed in any of the 22 subjects.<sup>*</sup></span></div><div><b>1 use</b><span><strong>Creases and glow</strong>Pillow creases eased and glow looked better from every angle, temporarily.<sup>**</sup></span></div></div>
-      <div class="note"><sup>*</sup> Korea Institute of Dermatological Sciences, KIDS-BDI132-BNK, January 2025. 22 women aged 42&ndash;66, twice daily for 2 weeks, compared with before use (p&lt;.001). <sup>**</sup> KIDS-BFJ031-BNK, November 2026. 21 adults, one use, temporary effect (p&lt;.05). Individual results may vary.</div></div>
+    <div class="sec white" data-t="이미지 1680×(높이 자유)"><div class="title" style="padding-bottom:14px"><span class="eyebrow">Clinically tested</span><h3>Measured at the Korea Institute of Dermatological Sciences</h3></div>
+      <div class="clin"><figure><div><img src="img/clin/ep-before.jpg" alt=""><img src="img/clin/ep-after.jpg" alt=""></div><span><i>Before</i><i>After one use</i></span><figcaption>Skin hydration map<sup>*</sup></figcaption></figure><figure><div><img src="img/clin/nl-before.jpg" alt=""><img src="img/clin/nl-after.jpg" alt=""></div><span><i>Before</i><i>After 2 weeks</i></span><figcaption>3D map of lines at the nasolabial fold<sup>*</sup></figcaption></figure></div>
+      <div class="clin-big"><b>3.9&times;</b><span>Pillow creases recovered 3.9 times as much on the side with the cream as on the side without, after one use.<sup>**</sup></span></div>
+      <ul class="clin-list"><li>Skin hydration, 10 skin layers</li><li>Skin elasticity, 5 facial areas</li><li>Look of lines, 7 facial areas</li><li>Pillow-crease recovery</li><li>Glow from multiple angles</li></ul>
+      <div class="note"><sup>*</sup> KIDS-BDI132-BNK, January 2025: 22 women aged 42&ndash;66, twice daily for 2 weeks; no abnormal skin responses. Images from one subject each. <sup>**</sup> KIDS-BFJ031-BNK, November 2026: 21 adults, one use, temporary effect (p&lt;.05), study led by a dermatologist (M.D.). Individual results may vary.</div></div>
 
     <div class="sec pro" data-t="이미지" style="padding-bottom:22px"><div class="title"><span class="eyebrow">The professional channel</span><h3>Found in Korean clinics and pharmacies</h3></div></div>
     <div class="sec" data-t="영상"><div class="drv"><video controls playsinline preload="metadata" poster="img/cover-clinic.jpg" src="../video-clinic-film/clinic-film_v11.mp4"></video></div></div>
