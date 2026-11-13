@@ -1,0 +1,155 @@
+/* PC(데스크탑) 배치 — preview-v2.html 위에 덧씌움. 칸 폭 1500px(업로드 3000px), 칸 높이 1200px 이하(업로드 2400 이하).
+   문구·사진은 모바일과 같고 배치만 가로로 바꾼다. build_desktop.py가 desktop.html을 만든다. */
+body.desk { background: #d9d5cf; }
+.desk .wrap { padding: 24px 0 60px; }
+.desk .phone { width: 1500px; border: 0; border-radius: 0; box-shadow: 0 0 0 1px #0000001a; }
+.desk .eyebrow { font-size: 15px; }
+.desk .note { font-size: 13px; padding: 18px 120px 0; }
+.desk .title { padding: 64px 120px 24px; }
+.desk .title h3 { font-size: 46px; }
+.desk .title p { font-size: 17px; }
+.desk .cta { display: inline-block; margin: 0; padding: 16px 44px; font-size: 17px; }
+
+/* 머리 3000×600 → 1500×300 */
+.desk .head { height: 300px; }
+.desk .head img { height: 64px; }
+.desk .head small { font-size: 15px; margin-top: 18px; }
+.desk .nav { padding: 0 120px; height: 52px; }
+.desk .nav > span, .desk .nav > svg { display: none; }
+.desk .nav > span:nth-of-type(2) { display: inline; margin-left: auto; }
+.desk .menu { display: flex !important; position: static; box-shadow: none; border: 0; gap: 34px; }
+.desk .menu a { border: 0; padding: 16px 0; font-size: 13px; }
+
+/* 홈 첫 화면: 글 왼쪽, 아치 사진 오른쪽 */
+.desk .hero { display: grid; grid-template-columns: 1fr 1fr; align-items: end; text-align: left; padding: 0 120px; height: 640px; }
+.desk .hero > :not(.arch) { grid-column: 1; }
+.desk .hero .eyebrow { align-self: end; margin-bottom: 0; }
+.desk .hero h2 { font-size: 92px; margin: 18px 0 20px; }
+.desk .hero p { font-size: 22px; margin: 0 0 120px; max-width: 420px; }
+.desk .hero .arch { grid-column: 2; grid-row: 1 / span 3; width: 560px; height: 560px; border-radius: 280px 280px 0 0; justify-self: end; }
+.desk .hero { grid-template-rows: auto auto 1fr; padding-top: 80px; }
+.desk .hero .eyebrow { align-self: start; }
+
+/* 숫자 3개 + 버튼 한 줄 */
+.desk .sec:has(> .facts) { display: flex; align-items: center; justify-content: space-between; padding: 40px 120px !important; }
+.desk .facts { padding: 0; flex: 0 0 820px; }
+.desk .facts div { font-size: 16px; padding: 0 28px; }
+.desk .facts b { font-size: 34px; margin-bottom: 6px; }
+
+/* 제형 */
+.desk .tex { height: 560px; padding: 120px 120px; }
+.desk .tex::before { inset: 0 0 0 40%; }
+.desk .tex h3 { font-size: 64px; }
+
+/* 임상: 제목 → 두 쌍 나란히 → 3.9× → 각주 */
+.desk .clin { grid-template-columns: 1fr 1fr; gap: 56px; padding: 0 120px; }
+.desk .clin i { font-size: 14px; }
+.desk .clin figcaption.st { gap: 20px; }
+.desk .clin figcaption.st b { font-size: 52px; }
+.desk .clin figcaption { font-size: 17px; }
+.desk .clin-big { margin: 36px 120px 0; grid-template-columns: 150px 1fr; font-size: 19px; padding: 22px 0; }
+.desk .clin-big b { font-size: 52px; }
+
+/* 전문 채널(검정): 제목 띠, 한마디·숫자 두 단 */
+.desk .pro .title h3 { font-size: 52px; }
+.desk .sec.pro:has(> .quote) { display: grid; grid-template-columns: 1.1fr 1fr; column-gap: 100px; padding: 70px 120px 60px !important; }
+.desk .pro .quote { grid-column: 1; padding: 0 !important; font-size: 44px; }
+.desk .pro .by { grid-column: 1; padding: 20px 0 0; font-size: 15px; }
+.desk .pro .words { grid-column: 2; grid-row: 1 / span 2; margin: 0; padding: 0 0 0 60px; border-top: 0; border-left: 1px solid #ffffff2e; font-size: 84px; }
+.desk .pro .big2 { grid-column: 2; margin: 30px 0 0; padding-left: 60px; font-size: 18px; }
+.desk .pro .big2 b { font-size: 96px; }
+.desk .pro .note { grid-column: 1 / span 2; padding: 30px 0 0; }
+
+/* 라인업 카드: 큰 카드 + 작은 카드(아마존 섹션 분할, 같은 이미지라 PC용 따로 없음) */
+.desk .cards { grid-template-columns: repeat(3, 1fr); }
+.desk .pc.wide { grid-column: span 2; font-size: 34px; }
+.desk .pc.wide small { font-size: 18px; }
+.desk .pc { font-size: 20px; } .desk .pc small { font-size: 16px; }
+
+/* 서류 + 숫자 세 줄: 두 단 */
+.desk .sec.white:has(> .docs) { display: grid; grid-template-columns: 1fr 1.2fr; column-gap: 70px; padding: 10px 120px 60px !important; }
+.desk .docs { padding: 0; }
+.desk .docs img { height: 300px !important; }
+.desk .rows3 { padding: 0; }
+.desk .rows3 div { grid-template-columns: 150px 1fr; font-size: 17px; padding: 20px 0; }
+.desk .rows3 b { font-size: 40px; }
+.desk .sec.white:has(> .docs) .note { grid-column: 1 / span 2; padding: 24px 0 0; }
+
+/* 사용 순서 */
+.desk .rt { margin: 10px 120px 0; }
+.desk .rt div { padding: 26px 30px 0; }
+.desk .rt img { width: 70%; margin: 0 auto 20px; }
+.desk .rt b { font-size: 15px; } .desk .rt em { font-size: 24px; }
+
+/* 끝 화면·띠 */
+.desk .end { padding: 70px 0 66px; }
+.desk .end img { height: 52px !important; }
+.desk .end small { font-size: 14px; margin-top: 16px; }
+.desk .band { padding: 70px 120px 64px; }
+.desk .band h2 { font-size: 72px; }
+.desk .band p { font-size: 20px; }
+
+/* 사진 꽉 채우고 글 얹는 칸 → 글 왼쪽, 사진 오른쪽 */
+.desk .full { display: grid; grid-template-columns: 1fr 1fr; height: 820px; background: var(--ground); }
+.desk .full > img { grid-column: 2; grid-row: 1; height: 820px !important; aspect-ratio: auto !important; -webkit-mask-image: none !important; mask-image: none !important; }
+.desk .full .ov, .desk .full > div:not(.ov) { position: static; grid-column: 1; grid-row: 1; align-self: center; padding: 0 60px 0 120px !important; text-align: left !important; }
+.desk .full h2 { font-size: 84px; } .desk .full h3 { font-size: 68px; }
+.desk .full p { font-size: 22px; max-width: 460px !important; margin: 0 !important; }
+
+/* 네 단계 → 한 줄 네 칸 */
+.desk .s4 { grid-template-columns: repeat(4, 1fr); margin: 0 120px; }
+.desk .s4 div { padding: 24px 26px 28px; border-left: 1px solid var(--line); }
+.desk .s4 div:first-child { border-left: 0; padding-left: 0; }
+.desk .s4 strong { font-size: 22px; } .desk .s4 span { font-size: 16px; } .desk .s4 b { font-size: 15px; }
+
+/* 사진만 있는 칸(세로 사진) → 가로 띠로 자름 */
+.desk .sec > img[src*="lift-tilt"] { height: 860px !important; aspect-ratio: auto !important; object-fit: cover; object-position: 50% 55%; }
+.desk .num div { padding: 70px 120px 76px; font-size: 22px; }
+.desk .num b { font-size: 128px; }
+
+/* 다른 라인 이동 칸: 가로 3:1 */
+.desk .xt { aspect-ratio: 3/1; grid-template-columns: 1fr 1.4fr; }
+.desk .xt div { padding: 0 60px 0 120px; }
+.desk .xt b { font-size: 60px; margin: 14px 0 28px; }
+.desk .xt u { font-size: 16px; padding: 13px 28px; }
+
+/* REJUVUSTER */
+.desk .f3 { padding: 46px 220px 40px; }
+.desk .f3 div { font-size: 16px; } .desk .f3 b { font-size: 40px; }
+.desk .sec:has(> .f3) .cta { display: table; margin: 0 auto; }
+.desk .sec:has(> .f3) .note { text-align: center; padding-bottom: 10px; }
+.desk .sec:has(> .pq) { display: grid; grid-template-columns: 1.4fr 1fr; align-items: center; background: #fff; }
+.desk .sec:has(> .pq) > img { height: 640px !important; aspect-ratio: auto !important; }
+.desk .pq { padding: 0 120px 0 70px !important; }
+.desk .pq q { font-size: 52px; }
+.desk .pq .eyebrow { font-size: 15px !important; }
+.desk .sec:has(> img[src*="rj-swirl"]) { display: grid; grid-template-columns: 1fr 1.4fr; align-items: center; }
+.desk .sec:has(> img[src*="rj-swirl"]) > img { height: 600px !important; aspect-ratio: auto !important; }
+.desk .sec:has(> img[src*="rj-swirl"]) .title { padding: 0 60px 0 120px !important; }
+.desk .rows3.w { display: grid; grid-template-columns: repeat(4, 1fr); padding: 10px 120px 0; column-gap: 40px; }
+.desk .rows3.w div { grid-template-columns: 1fr; border-bottom: 0; border-top: 1px solid var(--ink); gap: 14px; }
+.desk .rows3.w b { font-size: 40px; }
+.desk .feat { padding: 80px 260px !important; text-align: center; }
+.desk .feat b { font-size: 40px !important; }
+.desk .feat span { font-size: 15px !important; }
+
+/* ABOUT */
+.desk .band[style*="text-align:left"] { padding: 80px 120px 60px !important; }
+.desk .band h2 { max-width: 1000px; }
+.desk .who { grid-template-columns: 1fr 1fr; }
+.desk .who > div { display: grid; grid-template-columns: 300px 1fr; align-items: center; }
+.desk .who img { aspect-ratio: 4/5; }
+.desk .who p { padding: 30px 40px; }
+.desk .who q { font-size: 28px; } .desk .who span { font-size: 14px; }
+.desk .sec:has(> .n3) { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; }
+.desk .sec:has(> .n3) > img { height: 640px !important; aspect-ratio: auto !important; }
+.desk .n3 { grid-template-columns: 1fr; padding: 0 120px 0 40px; text-align: left; }
+.desk .n3 div { border-left: 0; border-top: 1px solid var(--line); padding: 18px 0; font-size: 16px; }
+.desk .n3 b { font-size: 52px; }
+.desk .sec:has(> .n3) .note { grid-column: 1 / span 2; padding: 0 120px 26px !important; }
+
+/* 상품 목록(아마존이 그림): 한 줄 다섯 칸 */
+.desk .az .grid { grid-template-columns: repeat(5, 1fr); padding: 0 120px; }
+.desk .card { font-size: 15px; }
+.desk .band h2[style] { font-size: 60px !important; }
+.desk .band p { max-width: 900px; }
