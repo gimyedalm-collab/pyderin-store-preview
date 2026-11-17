@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>HYDROVUSTER 마스크 · 아마존 칸 기획</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#0f1111;font-family:"Amazon Ember",Arial,sans-serif;font-size:14px}
+.page{width:1500px;margin:0 auto}
+/* 기획 표시 */
+.pin{position:absolute;z-index:5;display:flex;align-items:center;gap:6px;background:#ff5a1f;color:#fff;font-family:Pretendard,system-ui,sans-serif;font-weight:800;font-size:13px;padding:4px 10px 4px 4px;border-radius:99px;box-shadow:0 1px 3px rgba(0,0,0,.25);white-space:nowrap}
+.pin b{background:#fff;color:#ff5a1f;border-radius:99px;min-width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:12px;padding:0 6px}
+.box{position:relative;outline:3px dashed #ff5a1f;outline-offset:3px}
+.rel{position:relative}
+.plan{font-family:Pretendard,system-ui,sans-serif;background:#fff3ec;border-top:3px solid #ff5a1f;padding:14px 22px;display:flex;gap:26px;align-items:center;font-size:13px;flex-wrap:wrap}
+.plan h1{font-size:18px;margin:0}
+.plan span b{color:#ff5a1f}
+/* 아마존 크롬 */
+.nav{background:#131921;color:#fff;height:60px;display:flex;align-items:center;gap:16px;padding:0 16px}
+.nav .lg{font-size:22px;font-weight:700;letter-spacing:-1px}
+.nav .sr{flex:1;height:40px;border-radius:4px;background:#fff;display:flex;overflow:hidden}
+.nav .sr i{width:60px;background:#e6e6e6;border-right:1px solid #ccc}.nav .sr u{margin-left:auto;width:46px;background:#febd69}
+.nav small{font-size:12px;line-height:14px}
+.nav2{background:#232f3e;color:#fff;height:39px;display:flex;align-items:center;gap:20px;padding:0 16px;font-size:14px}
+.crumb{font-size:12px;color:#565959;padding:12px 18px 6px}
+/* 상단 */
+.top{display:grid;grid-template-columns:52px 520px 1fr 244px;gap:18px;padding:6px 18px 24px}
+.th{display:flex;flex-direction:column;gap:9px;padding-top:4px}
+.th div{width:44px;height:54px;border:1px solid #a2a6ac;border-radius:7px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;font-size:9px;color:#555}
+.th div.on{border:2px solid #e77600;box-shadow:0 0 3px 2px rgba(228,121,17,.5)}
+.th img{width:100%;height:100%;object-fit:cover}
+.mainimg{height:560px;display:flex;align-items:center;justify-content:center}
+.mainimg img{max-height:540px}
+.cen h1{font-size:24px;line-height:32px;font-weight:400;margin:0}
+.lnk{color:#007185;font-size:14px;margin:4px 0}
+.cen hr{border:0;border-top:1px solid #e7e7e7;margin:10px 0}
+.pr{font-size:28px}.pr sup{font-size:13px;vertical-align:13px}
+.tbl{display:grid;grid-template-columns:140px 1fr;gap:6px 12px;font-size:14px;margin:6px 0}
+.cen h2{font-size:16px;margin:12px 0 6px}
+.cen ul{margin:0;padding-left:18px}.cen li{margin:5px 0;line-height:20px}
+.buy{border:1px solid #d5d9d9;border-radius:8px;padding:18px;align-self:start}
+.btn{height:34px;border-radius:99px;display:flex;align-items:center;justify-content:center;margin:9px 0;font-size:13px}
+/* 갤러리 펼침 */
+.galx{margin:0 18px 10px;padding:30px 16px 16px;background:#fafafa;border-radius:8px}
+.galx .row{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
+.gt{aspect-ratio:1;border:1px solid #ddd;border-radius:6px;overflow:hidden;position:relative;background:#fff;font-family:Pretendard,system-ui,sans-serif}
+.gt img{width:100%;height:100%;object-fit:cover}
+.gt .cap{position:absolute;left:0;right:0;bottom:0;padding:8px;background:linear-gradient(transparent,rgba(14,22,70,.85));color:#fff;font-weight:700;font-size:13px;line-height:1.25}
+.gt .num{position:absolute;left:6px;top:6px;background:#ff5a1f;color:#fff;font-weight:800;font-size:12px;border-radius:99px;padding:1px 8px}
+.gt.navy{background:#23307a;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:14px}
+.gt.navy b{font-size:22px;line-height:1.1}
+.gtx{font-family:Pretendard,system-ui,sans-serif;font-size:12px;color:#444;margin-top:6px;line-height:1.35}
+/* 섹션 */
+.sec{padding:0 18px}
+.sec h2{font-size:24px;font-weight:700;margin:0;padding:22px 0 14px;border-top:1px solid #e7e7e7}
+.bs{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr 1fr;gap:12px;background:#f3f4f6;padding:16px;border-radius:4px}
+.bs>div{height:430px;border-radius:4px;background:#fff;font-family:Pretendard,system-ui,sans-serif;overflow:hidden;display:flex;flex-direction:column}
+.bs .h{background:linear-gradient(120deg,#23307a,#2f44b0);color:#fff;padding:36px 40px;justify-content:space-between}
+.bs .h img{height:30px;width:auto;align-self:flex-start}
+.bs .h .ey{font-size:13px;letter-spacing:.02em;opacity:.75;margin-top:26px}
+.bs .h b{display:block;font-size:40px;font-weight:800;letter-spacing:-.02em;margin:8px 0 12px}
+.bs .h p{font-size:16px;line-height:1.45;opacity:.92;max-width:430px}
+.bs .h small{font-size:11px;opacity:.6}
+.bs .c>img{width:100%;height:240px;object-fit:cover;display:block;background:#f4f5f8}
+.bs .c .t{padding:16px 18px 18px;flex:1;display:flex;flex-direction:column}
+.bs .c b{display:block;font-size:20px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
+.bs .c p{font-size:14px;line-height:1.4;color:#3b4150}
+.bs p,.cen li{text-wrap:pretty}
+.bs .lk{margin-top:auto;color:#007185;font-size:14px;font-family:"Amazon Ember",Arial,sans-serif}
+.bs .h .lk{color:#fff;opacity:.9}
+.kw{font-family:Pretendard,system-ui,sans-serif;background:#fff7f2;border:1px solid #ffd2bd;border-radius:6px;padding:16px 20px;margin:14px 0 0;font-size:14px;line-height:1.5}
+.kw code{display:block;background:#fff;border:1px solid #eee;padding:10px 12px;margin-top:8px;font-size:13px;color:#333}
+.ap{width:1464px;margin:0 auto}
+.ap .m{position:relative}
+.ap img{display:block;width:1464px}
+.cmp{width:1464px;margin:0 auto;border:2px dashed #c5c9d3;border-radius:6px;height:300px;display:grid;grid-template-columns:repeat(4,1fr);font-family:Pretendard,system-ui,sans-serif;color:#8a90a3}
+.cmp div{border-right:1px solid #e3e6ee;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.cmp div:last-child{border:0}
+.cmp i{width:70px;height:110px;border-radius:8px;background:#e9ecf4;display:block}
+.cmpw{width:1464px;margin:28px auto 0;font-family:Pretendard,system-ui,sans-serif;border:1px solid #e3e6ee;border-radius:6px;padding:26px 24px 18px}
+.cmpw h3{font-size:24px;margin:0 0 16px;color:#0f1111}
+.cmp2{width:100%;border-collapse:collapse;table-layout:fixed;font-size:14px;line-height:1.35;color:#0f1111}
+.cmp2 th{width:70px;text-align:left;font-weight:700;padding:10px 8px;border-top:1px solid #e3e6ee;vertical-align:top;color:#3b4150}
+.cmp2 td{padding:10px 8px;border-top:1px solid #e3e6ee;vertical-align:top;text-wrap:balance}
+.cmp2 tr:first-child th,.cmp2 tr:first-child td{border-top:0}
+.cmp2 td.this{background:#f0f3fb}
+.cmp2 img{width:100%;height:150px;object-fit:contain;display:block;margin:6px 0 8px;background:#fff;border-radius:4px}
+.cmp2 em{display:block;font-style:normal;font-size:12px;font-weight:700;color:#2f44b0;height:16px}
+.cmp2 .ln{display:block;font-size:11.5px;font-weight:800;letter-spacing:.02em}
+.cmp2 a{display:block;color:#007185;font-family:"Amazon Ember",Arial,sans-serif;margin-top:2px}
+.cmp2 .atc{display:inline-block;background:#ffd814;border-radius:99px;padding:5px 12px;font-family:"Amazon Ember",Arial,sans-serif;font-size:12.5px;white-space:nowrap}
+.cf{font-size:12px;color:#565959;margin:10px 0 0}
+.rev{padding:0 18px 60px;color:#565959}
+</style></head><body><div class="page">
+
+<div class="plan"><h1>HYDROVUSTER 마스크 · 아마존 칸 기획</h1>
+<span><b>①~⑧</b> 사진·영상 칸</span><span><b>T·B</b> 상품명·글머리표</span><span><b>BS</b> 브랜드 스토리</span><span><b>A1~A7</b> A+ 칸</span><span><b>C</b> 비교표</span>
+<span style="color:#8a5a3c">주황 점선 = 우리가 채우는 칸 · 회색 = 아마존 기본</span></div>
+
+<div class="nav"><span class="lg">amazon</span><small>Deliver to<br><b>New York 10001</b></small><div class="sr"><i></i><u></u></div><small>Hello, sign in<br><b>Account &amp; Lists</b></small><small>Returns<br><b>&amp; Orders</b></small><b>Cart</b></div>
+<div class="nav2"><b>☰ All</b><span>Today's Deals</span><span>Customer Service</span><span>Registry</span><span>Gift Cards</span><span>Beauty &amp; Personal Care</span></div>
+<div class="crumb">Beauty &amp; Personal Care › Skin Care › Face › Treatments &amp; Masks › Masks › Sheet Masks</div>
+
+<div class="top">
+ <div class="th rel box"><span class="pin" style="left:-8px;top:-30px"><b>①–⑧</b>썸네일</span>
+  <div class="on"><img src="assets/pouch.png" style="object-fit:contain"></div><div><img src="assets/th01_after.jpg"></div><div style="background:#23307a"></div><div><img src="assets/sheet-hand.jpg"></div><div><img src="assets/face-peel.jpg"></div><div style="background:#23307a"></div><div><img src="assets/pouch.png" style="object-fit:contain"></div><div>▶ VIDEO</div>
+ </div>
+ <div class="mainimg rel box"><span class="pin" style="left:8px;top:8px"><b>①</b>메인 · 흰 배경 실물</span><img src="assets/pouch.png"></div>
+ <div class="cen">
+  <div class="rel box" style="padding:2px"><span class="pin" style="right:0;top:-14px"><b>T</b>상품명 200자 이내</span>
+   <h1>PYDERIN HYDROVUSTER PDRN SOS Hyal Soothing Mask, Cooling Sheet Mask with PDRN, Niacinamide &amp; Guaiazulene for Hot, Stressed-Looking Skin, Korean Skincare, 7 Sheets</h1></div>
+  <div class="lnk">Visit the PYDERIN Store</div>
+  <div style="color:#565959;font-size:14px">New to Amazon</div>
+  <hr>
+  <div class="pr"><sup>$</sup>00<sup>00</sup></div>
+  <div class="tbl"><b>Brand</b><span>PYDERIN</span><b>Item Form</b><span>Sheet</span><b>Unit Count</b><span>7.0 Count</span><b>Skin Type</b><span>All</span><b>Scent</b><span>Unscented</span></div>
+  <hr>
+  <div class="rel box" style="padding:2px"><span class="pin" style="right:0;top:-14px"><b>B</b>글머리표 5줄</span>
+  <h2>About this item</h2><ul>
+   <li>CLINICALLY TESTED COOLING: In a clinical test, heat-warmed skin was 19.7°F (10.9°C) cooler after one 20-minute use, vs. 7.2°F (4.0°C) for untreated skin. Results are temporary.</li>
+   <li>PDRN + 2% NIACINAMIDE: Made with Derbiome® PDRN 10K (99% purity, 97 kDa), niacinamide, snail mucin and 10 types of hyaluronic acid.</li>
+   <li>COOLS AND COMFORTS: Guaiazulene, from chamomile, gives the essence its blue color and a soothing feel after a day in the sun, a workout or a facial.</li>
+   <li>INDIGO AND OAK FIBER SHEET: A one-piece, full-face sheet soaked in 1.13 oz (32 g) of essence. It stays put for the full 20 minutes.</li>
+   <li>GENTLE, FROM KOREAN PHARMACIES: Dermatologist-tested and non-irritating in a 24-hour patch test. No added fragrance. PYDERIN is sold in 2,000+ pharmacies across Korea.</li>
+  </ul></div>
+ </div>
+ <div class="buy"><div class="pr"><sup>$</sup>00<sup>00</sup></div><div style="font-size:14px;margin:8px 0">FREE delivery <b>Friday</b></div><div style="color:#007600;font-size:18px">In Stock</div><div class="btn" style="background:#ffd814">Add to Cart</div><div class="btn" style="background:#ffa41c">Buy Now</div><div style="font-size:12px;color:#565959">Ships from Amazon<br>Sold by PYDERIN</div></div>
+</div>
+
+<!-- 갤러리 펼침 -->
+<div class="galx rel box"><span class="pin" style="left:10px;top:-14px"><b>①–⑧</b>사진 7칸 + 영상 — 실제로는 썸네일에 숨어 있는 칸을 펼침</span>
+ <div class="row">
+  <div><div class="gt"><span class="num">1</span><img src="assets/pouch.png" style="object-fit:contain;padding:10px"></div><div class="gtx">메인. 흰 배경 실물 파우치(규칙상 글자·연출 불가)</div></div>
+  <div><div class="gt"><span class="num">2</span><img src="assets/th01_after.jpg"><div class="cap">19.7°F cooler<br>after one use</div></div><div class="gtx">증거. 열화상 + 숫자 (A2 축약)</div></div>
+  <div><div class="gt navy"><span class="num">3</span><b>PDRN<br>Niacinamide 2%<br>Guaiazulene</b></div><div class="gtx">성분 3개 (A4 축약)</div></div>
+  <div><div class="gt"><span class="num">4</span><img src="assets/sheet-hand.jpg"><div class="cap">Indigo &amp; oak<br>fiber sheet</div></div><div class="gtx">시트 질감 (A5 축약)</div></div>
+  <div><div class="gt"><span class="num">5</span><img src="assets/face-peel.jpg"><div class="cap">For skin that<br>runs hot</div></div><div class="gtx">사용 상황 (A3 축약)</div></div>
+  <div><div class="gt navy"><span class="num">6</span><b style="font-size:40px">0.00</b><span style="font-size:13px;margin-top:6px">irritation score<br>Dermatologist-tested</span></div><div class="gtx">저자극 (A6 축약)</div></div>
+  <div><div class="gt"><span class="num">7</span><img src="assets/pouch.png" style="object-fit:contain;padding:10px 40px"><div class="cap">7 sheets, 1.13 oz each</div></div><div class="gtx">구성품·용량</div></div>
+  <div><div class="gt" style="background:#111;display:flex;align-items:center;justify-content:center;color:#fff;font-size:30px"><span class="num">8</span>▶</div><div class="gtx">영상 15초: 꺼내기 → 붙이기 → 20분 → 떼기</div></div>
+ </div>
+</div>
+
+<div class="sec"><h2>From the brand</h2>
+ <div class="rel box"><span class="pin" style="left:10px;top:-14px"><b>BS</b>브랜드 스토리 — 모든 피더린 상품 공통 띠</span>
+ <div class="bs">
+  <div class="h"><img src="assets/bs/logo-white.png" alt="PYDERIN"><div><div class="ey">KOREAN CLINIC AND PHARMACY SKINCARE</div><b>PDRN, documented.</b><p>Carried by 2,000+ pharmacies in Korea.¹ Purity, molecular weight and origin come straight from our supplier’s certificates.</p></div><div><span class="lk">Visit the Store ›</span><br><small>¹ Company figure reported by Dailypharm, July 22, 2026.</small></div></div>
+  <div class="c"><img src="assets/bs/doc-coa.jpg" style="object-fit:contain;padding:14px;background:#eef1f8"><div class="t"><b style="color:#23307a">Our PDRN</b><p>99% purity, 97 kDa, from Korean chum salmon.</p><span class="lk">Learn about our PDRN ›</span></div></div>
+  <div class="c"><img src="assets/bs/m-cream.jpg"><div class="t"><b style="color:#23307a">PDRN Lift</b><p>The firming line found in Korean skin clinics.</p><span class="lk">Shop PDRN Lift ›</span></div></div>
+  <div class="c"><img src="assets/bs/m-rejuvuster.jpg"><div class="t"><b style="color:#b0202d">REJUVUSTER</b><p>The PDRN cream carried by pharmacies across Korea.</p><span class="lk">Shop REJUVUSTER ›</span></div></div>
+  <div class="c"><img src="assets/pouch.png" style="object-fit:contain;padding:18px 40px;background:#eef1f8"><div class="t"><b style="color:#2f44b0">HYDROVUSTER</b><p>Our soothing blue line, starting with a cooling sheet mask.</p><span class="lk">Shop HYDROVUSTER ›</span></div></div>
+ </div></div>
+</div>
+
+<div class="sec"><h2>Product description</h2></div>
+<div class="ap">
+ <div class="m box"><span class="pin" style="left:12px;top:12px"><b>A1</b>첫 화면</span><img src="D01.jpg"></div>
+ <div class="m box"><span class="pin" style="left:12px;top:12px"><b>A2</b>증거 −19.7°F</span><img src="D02.jpg"></div>
+ <div class="m box"><span class="pin" style="right:12px;top:12px"><b>A3</b>사용 상황</span><img src="D03.jpg"></div>
+ <div class="m box"><span class="pin" style="right:12px;top:12px"><b>A4</b>성분</span><img src="D04.jpg"></div>
+ <div class="m box"><span class="pin" style="right:12px;top:12px"><b>A5</b>시트</span><img src="D05.jpg"></div>
+ <div class="m box"><span class="pin" style="right:12px;top:12px"><b>A6</b>저자극·만족</span><img src="D06.jpg"></div>
+ <div class="m box"><span class="pin" style="right:12px;top:12px"><b>A7</b>사용법</span><img src="D07.jpg"></div>
+</div>
+<div class="cmpw rel"><span class="pin" style="left:12px;top:-14px"><b>C</b>비교표 — A+ 마지막 칸, 피더린 아마존 상품 8개 전부</span>
+ <h3>Compare PYDERIN PDRN skincare</h3>
+ <table class="cmp2"><tr><th></th><td class=this><em>This item</em><img src="assets/pouch.png" style="padding:12px 30px"><span class="ln" style="color:#2f44b0">HYDROVUSTER</span><a>PDRN SOS Hyal Soothing Mask</a></td><td><em class=sp></em><img src="assets/cmp/hv-serum.jpg"><span class="ln" style="color:#2f44b0">HYDROVUSTER</span><a>PDRN SOS Derma Soothing Serum</a></td><td><em class=sp></em><img src="assets/cmp/hv-cream.jpg"><span class="ln" style="color:#2f44b0">HYDROVUSTER</span><a>PDRN Re-Barrier Soothing Cream</a></td><td><em class=sp></em><img src="assets/cmp/lift-toner.jpg"><span class="ln" style="color:#23307a">PDRN Lift</span><a>PDRN Lift Toner</a></td><td><em class=sp></em><img src="assets/cmp/lift-ampoule.jpg"><span class="ln" style="color:#23307a">PDRN Lift</span><a>PDRN Lift Fit Ampoule</a></td><td><em class=sp></em><img src="assets/cmp/lift-cream.jpg"><span class="ln" style="color:#23307a">PDRN Lift</span><a>PDRN Lift Cream</a></td><td><em class=sp></em><img src="assets/cmp/lift-mask.jpg"><span class="ln" style="color:#23307a">PDRN Lift</span><a>PDRN Lift Facial Mask</a></td><td><em class=sp></em><img src="assets/cmp/rejuvuster.jpg"><span class="ln" style="color:#b0202d">REJUVUSTER</span><a>REJUVUSTER Cream+</a></td></tr><tr><th>Use</th><td class=this>Cooling sheet mask, when skin feels hot</td><td>Daily soothing serum</td><td>Light soothing cream</td><td>Step 1: hydrates and preps</td><td>Step 2: lightweight serum</td><td>Step 3: the signature firming cream</td><td>Weekly sheet mask</td><td>Rich, buttery cream that hydrates</td></tr><tr><th>Size</th><td class=this>7 sheets, 1.13 oz each</td><td>1.35 fl oz (40 ml)</td><td>2.03 fl oz (60 ml)</td><td>3.38 fl oz (100 ml)</td><td>1.01 fl oz (30 ml)</td><td>1.01 fl oz (30 ml)</td><td>5 sheets</td><td>0.85 fl oz (25 ml)</td></tr><tr><th>PDRN*</th><td class=this>1,000 ppm</td><td>10,000 ppm</td><td>5,000 ppm</td><td>20,000 ppm</td><td>20,000 ppm</td><td>20,000 ppm</td><td>1,000 ppm</td><td>10,000 ppm</td></tr><tr><th>Also with</th><td class=this>2% niacinamide<br>Guaiazulene</td><td>Snail mucin<br>Guaiazulene</td><td>Panthenol<br>Guaiazulene</td><td></td><td></td><td></td><td></td><td>2% niacinamide<br>Centella</td></tr><tr><th></th><td class=this><span class="atc">Add to Cart</span></td><td><span class="atc">Add to Cart</span></td><td><span class="atc">Add to Cart</span></td><td><span class="atc">Add to Cart</span></td><td><span class="atc">Add to Cart</span></td><td><span class="atc">Add to Cart</span></td><td><span class="atc">Add to Cart</span></td><td><span class="atc">Add to Cart</span></td></tr></table>
+ <p class="cf">*Derbiome® PDRN 10K raw ingredient per package or current listing. Blank = not listed here.</p>
+</div>
+<div class="sec" style="margin-top:20px"><h2>Customer reviews</h2></div>
+<div class="rev">No customer reviews yet</div>
+</div></body></html>
