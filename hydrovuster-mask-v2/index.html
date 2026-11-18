@@ -95,8 +95,8 @@ function place(){document.querySelectorAll('.hs').forEach(b=>{const [x,y]=(isMob
 place();addEventListener('resize',place);
 document.querySelectorAll('.hs').forEach(b=>b.onclick=e=>{e.stopPropagation();const o=b.classList.contains('open');document.querySelectorAll('.hs').forEach(x=>x.classList.remove('open'));if(!o)b.classList.add('open');});
 document.addEventListener('click',()=>document.querySelectorAll('.hs').forEach(x=>x.classList.remove('open')));
-const tr=document.querySelector('.track'),n=tr.children.length,dots=document.querySelector('.dots');let k=0;
+const tr=document.querySelector('.track');if(tr){const n=tr.children.length,dots=document.querySelector('.dots');let k=0;
 for(let i=0;i<n;i++){const d=document.createElement('i');d.onclick=()=>go(i);dots.appendChild(d);}
 function go(i){k=(i+n)%n;tr.style.transform=`translateX(-${k*100}%)`;[...dots.children].forEach((d,j)=>d.classList.toggle('on',j==k));}
-document.querySelector('.prev').onclick=()=>go(k-1);document.querySelector('.next').onclick=()=>go(k+1);go(0);
+document.querySelector('.prev').onclick=()=>go(k-1);document.querySelector('.next').onclick=()=>go(k+1);go(0);}
 </script></body></html>
