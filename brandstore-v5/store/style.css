@@ -1,0 +1,118 @@
+:root{--ink:#141414;--body:#2b2b2b;--sub:#5b6b7a;--line:#dfe3e7;--red:#9c1e3c;--tile:#f1f2f4;--steel:#c9d0d6;--soft:#f6f7f8;
+ --mtop:linear-gradient(90deg,rgb(154,161,167),rgb(164,171,179) 50%,rgb(179,188,195))}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff;color:var(--body);font:300 15px/1.6 Geologica,sans-serif;-webkit-font-smoothing:antialiased}
+img,video{display:block;width:100%}a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+h1,h2,h3,h4,.num{font-family:Archivo,sans-serif;font-stretch:75%;font-weight:600;color:var(--ink);letter-spacing:-.005em}
+.eyebrow{display:block;font:400 11px Geologica;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);margin-bottom:10px}
+.btn{display:inline-block;border:1px solid var(--ink);border-radius:999px;padding:11px 30px;font:400 12px Geologica;letter-spacing:.02em;color:var(--ink)}
+.more{font:400 12px Geologica;border-bottom:1px solid currentColor;padding-bottom:2px}
+.fn{font-size:11px;color:var(--sub);line-height:1.55}sup{font-size:.55em;vertical-align:super}
+section{padding:80px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}
+.head h2{font-size:40px;line-height:1.02}.head p{max-width:380px;font-size:14px;color:var(--sub)}
+.rel{position:relative}
+/* 검토용(아마존에는 안 올라감) */
+.note{background:#fafafa;border-bottom:1px solid var(--line);padding:12px 0;font:13px/1.6 'Noto Sans KR',sans-serif;color:#333}
+.note label{cursor:pointer;margin-left:6px}
+.qa-tag{display:none;position:absolute;left:8px;top:8px;z-index:3;font:700 10.5px/1.35 'Noto Sans KR';color:#fff;background:#1a7f37;padding:3px 7px;border-radius:4px}
+.qa-tag.warn{background:#b3261e}.qa .qa-tag{display:block}
+/* 아마존 기본 메뉴 흉내 */
+.amz{background:#fff;border-bottom:1px solid #e3e6e6;font:400 13px Arial,sans-serif;color:#0f1111}
+.amz .bar{display:flex;gap:22px;align-items:center;height:46px;white-space:nowrap;overflow-x:auto;scrollbar-width:none}
+.amz img{width:96px}.amz b{border-bottom:2px solid #0f1111;padding:12px 0;font-weight:400}.amz .f{margin-left:auto;border:1px solid #888c8c;border-radius:6px;padding:2px 10px;font-size:12px}
+/* Home 첫 화면: 스틸 스튜디오(3D) */
+.hero{position:relative;background:var(--steel)}
+.hero video,.hero .ph{aspect-ratio:2/1;object-fit:cover}
+.hero .tx{position:absolute;inset:0;display:flex;align-items:center}.hero .tx .wrap{width:100%}
+.hero .box{max-width:430px}
+.hero .big{font-size:132px;line-height:.86;margin:12px 0 6px}.hero .big small{font-size:.42em;margin-left:2px}
+.hero .k{font:600 22px Archivo;font-stretch:75%;color:var(--ink);text-transform:uppercase}
+.hero .rule{width:44px;height:3px;background:var(--red);margin:22px 0 16px}
+.hero .p{color:var(--ink)}.hero .p b{font-weight:400}.hero .btn{margin-top:26px}
+.hero .eyebrow{color:#26303a}
+.hero .m,.hero .txm{display:none}
+/* 하위 페이지 첫 화면: 사진 + 연한 스틸 글 칸(빨강 띠 없음) */
+.split{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.split .im img{height:100%;object-fit:cover}
+.split .tx{padding:72px 56px;display:flex;flex-direction:column;justify-content:center}
+.split .tx:first-child{padding-left:max(40px,calc((100vw - 1200px)/2 + 40px))}
+.split .tx h1,.split .tx h2{font-size:clamp(40px,4.4vw,64px);line-height:1;margin-bottom:14px}
+.split .tx p{max-width:440px}
+.ptitle{padding:72px 0 0}.ptitle h1{font-size:clamp(40px,5vw,72px);line-height:1;margin-bottom:12px}.ptitle p{max-width:520px;color:var(--sub)}
+/* 제품 선택 */
+.grp{display:flex;align-items:baseline;gap:14px;border-top:1px solid var(--sub);padding:14px 0 18px}
+.grp h3{font-size:20px}.grp span{font-size:13px;color:var(--sub)}.grp a{margin-left:auto}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card .im{position:relative;background:var(--tile);aspect-ratio:1}
+.card .st{position:absolute;left:14px;top:12px;font:400 11px Geologica;letter-spacing:.1em;color:var(--sub)}
+.card .tag{position:absolute;right:14px;top:12px;font:400 11px Geologica;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.card h4{font-size:19px;margin:14px 0 4px}.card .d{font-size:13.5px;line-height:1.5;min-height:42px}
+.card .s{display:flex;justify-content:space-between;margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:12px;color:var(--sub)}
+.rj{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:46px}
+.rj .about{grid-column:span 3;border-top:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;padding:0 56px}
+.rj .about h3{font-size:34px;line-height:1.05;margin:0 0 14px}.rj .about p{max-width:460px;font-size:14px}.rj .about .btn{align-self:flex-start;margin-top:22px}
+/* 근거: 숫자 + 증명서(Home 한 곳) */
+.proof .in{display:grid;grid-template-columns:1fr 1.25fr;gap:56px;align-items:center}
+.proof h2{font-size:42px;line-height:1.05;margin-bottom:12px}
+.nums{margin:24px 0 20px;border-top:1px solid var(--line)}
+.nums div{display:flex;align-items:baseline;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid var(--line)}
+.nums .num{font-size:clamp(48px,5vw,80px);line-height:.95}
+.nums span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);text-align:right}
+.docs{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:470px;margin-left:auto}  /* 증명서 원본 해상도(450~640px)보다 늘리지 않음 */
+.doc{background:#fff;border:1px solid var(--line);padding:14px}
+.doc img{aspect-ratio:3/4;object-fit:contain}
+.doc span:not(.qa-tag){display:block;margin-top:10px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+/* 임상 */
+.feat{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.feat .im img{height:100%;object-fit:contain;padding:8% 6%}
+.feat .txt{padding:72px max(40px,calc((100vw - 1200px)/2 + 40px)) 72px 56px}
+.feat h2{font-size:40px;line-height:1.05;margin-bottom:10px}
+.res{margin:26px 0 24px;border-top:1px solid var(--line)}
+.res div{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+.res .num{font-size:50px;line-height:1}.res p{font-size:13px;line-height:1.5}
+/* 병원·약국 채널 */
+.chan .big{display:flex;gap:40px;align-items:end;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap}
+.chan h2{font-size:42px;line-height:1.04;max-width:720px}
+.chan .stat .num{display:block;font-size:72px;line-height:1}.chan .stat span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--sub)}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.q{border-top:1px solid var(--ink);padding:22px 0 8px}
+.q p{font:500 20px/1.3 Archivo;font-stretch:90%;color:var(--ink);margin-bottom:16px}
+.q span{font-size:11px;letter-spacing:.06em;color:var(--sub);text-transform:uppercase}
+.chan .fn{margin-top:22px}
+/* 단계·성분 */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.steps img{aspect-ratio:4/5;object-fit:cover}
+.steps .step{display:block;margin-top:14px;font:400 11px Geologica;letter-spacing:.1em;color:var(--sub)}
+.steps h3{font-size:19px;margin:4px 0 6px}.steps p{font-size:13px;color:var(--sub)}
+.ingr{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.ingr div{padding:22px 18px 22px 0;border-bottom:1px solid var(--line)}
+.ingr b{display:block;font:600 18px Archivo;font-stretch:75%;margin:10px 0 4px;color:var(--ink)}.ingr span{font-size:13px;color:var(--sub)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}.duo img{aspect-ratio:4/5;object-fit:cover}
+.cmp{border-top:1px solid var(--ink)}
+.cmp .r{display:grid;grid-template-columns:2.2fr .9fr .8fr 1.3fr 2.2fr;gap:18px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);font-size:14px}
+.cmp .r.h{font:400 11px Geologica;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);padding:12px 0}
+.cmp .r b{font:600 18px Archivo;font-stretch:75%;color:var(--ink);display:flex;align-items:center;gap:14px}.cmp img{width:64px;background:var(--tile)}
+.cmp .num{font-size:22px}
+/* 다른 라인으로 */
+.explore{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.explore img{aspect-ratio:3/2;object-fit:cover}
+.explore .cap{display:flex;justify-content:space-between;align-items:end;padding:18px 0 0}.explore h3{font-size:28px}
+.explore.one{grid-template-columns:1fr}.explore.one a{display:grid;grid-template-columns:1fr 1fr;align-items:center;border-top:1px solid var(--line);padding-top:24px}
+.explore.one img{aspect-ratio:1}.explore.one .cap{padding:0 56px;flex-direction:column;align-items:flex-start;gap:20px}
+@media(max-width:860px){
+ .wrap{padding:0 16px}section{padding:52px 0}.head{display:block}.head h2{font-size:30px}.head p{margin-top:8px}
+ .hero video.d{display:none}.hero .m,.hero .txm{display:block}
+ .hero .txm{padding:34px 16px 30px;background:#fff}.hero video.m,.hero .ph.m{aspect-ratio:3/2}
+ .hero .big{font-size:96px}.hero .k{font-size:18px}.hero .rule{margin:16px 0 12px}.hero .p{font-size:14px}.hero .btn{margin-top:18px}
+ .split,.proof .in,.feat,.explore,.duo{grid-template-columns:1fr}.split .tx{padding:36px 16px}.split .tx h1,.split .tx h2{font-size:34px}
+ .split.first .im{order:-1}.split .im img{aspect-ratio:1;height:auto}
+ .cards,.steps{grid-template-columns:1fr 1fr;gap:12px 10px}.card h4,.steps h3{font-size:17px}.card .d{font-size:12.5px;min-height:0}.grp span{display:none}
+ .rj{grid-template-columns:1fr;margin-top:36px}.rj .about{grid-column:auto;padding:26px 20px;order:-1}.rj .about h3{font-size:26px}
+ .rj .card{display:grid;grid-template-columns:44% 1fr;column-gap:14px;align-items:start}.rj .card .im{grid-row:span 3}.rj .card h4{margin-top:4px}
+ .proof h2,.feat h2,.chan h2{font-size:30px}.nums .num{font-size:48px}.nums span{font-size:10px}.docs{max-width:300px;margin-left:0}
+ .feat .im img{aspect-ratio:1;height:auto}.feat .txt{padding:36px 16px}.res div{grid-template-columns:96px 1fr}.res .num{font-size:30px}
+ .chan .stat .num{font-size:52px}.quotes{grid-template-columns:1fr}.ingr{grid-template-columns:1fr!important}
+ .explore.one a{grid-template-columns:1fr}.cmp .r{grid-template-columns:1fr 1fr;gap:6px 12px}.cmp .r b{grid-column:1/-1}.cmp .r.h{display:none}.cmp .r span[data-l]::before{content:attr(data-l);display:block;font:400 10px Geologica;letter-spacing:.1em;text-transform:uppercase;color:var(--sub)}.explore.one .cap{padding:20px}.ptitle{padding:44px 0 0}.fn{font-size:12px}
+}
