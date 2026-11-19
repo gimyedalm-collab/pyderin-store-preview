@@ -25,14 +25,12 @@ section{padding:80px 0}
 /* Home 첫 화면: 스틸 스튜디오(3D) */
 .hero{position:relative;background:var(--steel)}
 .hero video,.hero .ph{aspect-ratio:2/1;object-fit:cover}
-.hero .tx{position:absolute;inset:0;display:flex;align-items:center}.hero .tx .wrap{width:100%}
-.hero .box{max-width:430px}
-.hero .big{font-size:132px;line-height:.86;margin:12px 0 6px}.hero .big small{font-size:.42em;margin-left:2px}
-.hero .k{font:600 22px Archivo;font-stretch:75%;color:var(--ink);text-transform:uppercase}
-.hero .rule{width:44px;height:3px;background:var(--red);margin:22px 0 16px}
-.hero .p{color:var(--ink)}.hero .p b{font-weight:400}.hero .btn{margin-top:26px}
-.hero .eyebrow{color:#26303a}
-.hero .m,.hero .txm{display:none}
+.herotx{background:#fff;padding-top:56px}.herotx .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end}
+.herotx .big{font-size:132px;line-height:.86;margin:12px 0 6px}.herotx .big small{font-size:.42em;margin-left:2px}
+.herotx .k{font:600 22px Archivo;font-stretch:75%;color:var(--ink);text-transform:uppercase}
+.herotx .rule{width:44px;height:3px;background:var(--red);margin:22px 0 0}
+.herotx .p{color:var(--ink);font-size:17px}.herotx .p b{font-weight:400}.herotx .btn{margin-top:22px}
+.herotx .eyebrow{color:#26303a}
 /* 하위 페이지 첫 화면: 사진 + 연한 스틸 글 칸(빨강 띠 없음) */
 .split{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
 .split .im img{height:100%;object-fit:cover}
@@ -123,9 +121,8 @@ section{padding:80px 0}
 .explore.one img{aspect-ratio:1}.explore.one .cap{padding:0 56px;flex-direction:column;align-items:flex-start;gap:20px}
 @media(max-width:860px){
  .wrap{padding:0 16px}section{padding:52px 0}.head{display:block}.head h2{font-size:30px}.head p{margin-top:8px}
- .hero video.d{display:none}.hero .m,.hero .txm{display:block}
- .hero .txm{padding:34px 16px 30px;background:#fff}.hero video.m,.hero .ph.m{aspect-ratio:3/2}
- .hero .big{font-size:96px}.hero .k{font-size:18px}.hero .rule{margin:16px 0 12px}.hero .p{font-size:14px}.hero .btn{margin-top:18px}
+ .herotx{padding-top:32px}.herotx .wrap{grid-template-columns:1fr;gap:16px}
+ .herotx .big{font-size:96px}.herotx .k{font-size:18px}.herotx .rule{margin:16px 0 0}.herotx .p{font-size:15px}.herotx .btn{margin-top:18px}
  .split,.proof .in,.feat,.explore,.duo{grid-template-columns:1fr}.split .tx{padding:36px 16px}.split .tx h1,.split .tx h2{font-size:34px}
  .split.first .im{order:-1}.split .im img{aspect-ratio:1;height:auto}
  .cards,.steps{grid-template-columns:1fr 1fr;gap:18px 14px}.card h4,.steps h3{font-size:17px}.card .d{font-size:12.5px;min-height:0}.grp span{display:none}
