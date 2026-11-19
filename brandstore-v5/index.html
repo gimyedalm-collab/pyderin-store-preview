@@ -35,7 +35,7 @@ th{background:var(--bg);font-weight:700;white-space:nowrap}
 .cmpbar button{font:inherit;font-size:14px;border:1px solid var(--ink);background:#fff;border-radius:999px;padding:6px 18px;cursor:pointer}
 .cmpbar button.on{background:var(--ink);color:#fff}
 .cmpbar label{margin-left:auto;font-size:14px}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
 .col h3{font-size:17px;margin-bottom:4px}.col p{font-size:13.5px;color:#444;margin-bottom:10px;min-height:44px}
 .frame{border:1px solid var(--line);overflow:hidden;position:relative;background:#fff}
 .frame iframe{border:0;transform-origin:0 0;position:absolute;left:0;top:0}
@@ -115,11 +115,12 @@ th{background:var(--bg);font-weight:700;white-space:nowrap}
 </div></section>
 
 <section><div class="wrap">
-<h2>2단계 · 첫 화면 + 제품 선택 시안 <small>내용은 같고 방향만 다름</small></h2>
+<h2>2단계 · 첫 화면 + 제품 선택 시안 <small>내용은 같고 방향만 다름 · C는 추천 섞기안(추가)</small></h2>
 <div class="cmpbar"><button data-m="pc" class="on">PC로 비교</button><button data-m="mob">모바일로 비교</button><label><input type="checkbox" id="qa"> 아마존 칸 나눔 표시</label></div>
 <div class="cols" id="cols">
  <div class="col"><h3>A · 화이트 중심</h3><p>첫 화면과 제품 선택 칸 모두 흰 바탕. The Ordinary 구조에 가장 가깝고, 아마존 흰 틈과도 자연스럽게 이어짐.</p><div class="frame"><iframe data-v="white"></iframe></div></div>
  <div class="col"><h3>B · 스틸 소재감</h3><p>첫 화면은 스틸 배경 + 금속 받침, 제품 선택 칸은 연한 스틸 바탕 위 밝은 카드. 브랜드 색은 더 분명하지만 칸 사이 흰 틈이 보임.</p><div class="frame"><iframe data-v="steel"></iframe></div></div>
+ <div class="col"><h3>C · 섞기 (추천)</h3><p>첫 화면만 스틸 배경 + 금속 받침, 제품 선택 칸은 흰 바탕. 라인 제목 선만 스틸 회청색으로 이어 줌.</p><div class="frame"><iframe data-v="mix"></iframe></div></div>
 </div>
 </div></section>
 
@@ -136,7 +137,7 @@ th{background:var(--bg);font-weight:700;white-space:nowrap}
 
 <section class="ask"><div class="wrap">
 <h2>여기서 멈춥니다 — 골라 주세요</h2>
-<ol><li>페이지 방향: A 화이트 중심 / B 스틸 소재감 / 섞기(예: 첫 화면만 B, 제품 선택은 A)</li>
+<ol><li>페이지 방향: A 화이트 중심 / B 스틸 소재감 / C 섞기(첫 화면 B 스틸 + 제품 선택 A 화이트, 시안 추가함)</li>
 <li>3D 정지 시안: A / B — 고른 쪽으로 움직임을 적용합니다</li></ol>
 </div></section>
 
