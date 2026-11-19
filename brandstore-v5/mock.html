@@ -1,0 +1,114 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PYDERIN v5 첫 화면 시안</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,400..700&family=Geologica:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* v5 첫 화면 + 제품 선택. #white = 화이트 중심, #steel = 스틸 소재감. 내용·구도는 같고 바탕·받침 재질만 다름. */
+:root{--ink:#141414;--body:#2b2b2b;--sub:#5b6b7a;--line:#dfe3e7;--red:#9c1e3c;--tile:#f1f2f4;
+ --hero:#eef0f2;--sec:#fff;--grp:#5b6b7a;--mtop:rgb(211,212,216)}
+body.steel{--hero:#c9d0d6;--sec:#e2e7eb;--line:#cfd6dc;--mtop:linear-gradient(90deg,rgb(154,161,167),rgb(164,171,179) 50%,rgb(179,188,195))}
+body.steel .hero .eyebrow{color:#26303a}body.steel .hero .p{color:#141414}  /* 회색 배경 위 글자 대비 */
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff;color:var(--body);font:300 15px/1.6 Geologica,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+h1,h2,h3,.num{font-family:Archivo,sans-serif;font-stretch:75%;font-weight:600;color:var(--ink)}
+.eyebrow{display:block;font:400 11px Geologica;letter-spacing:.12em;text-transform:uppercase;color:var(--sub)}
+.btn{display:inline-block;border:1px solid var(--ink);border-radius:999px;padding:11px 30px;font:400 12px Geologica;letter-spacing:.02em;color:var(--ink)}
+/* 아마존 기본 메뉴(우리가 바꾸지 못하는 부분, 회색으로 흉내) */
+.amz{background:#fff;border-bottom:1px solid #e3e6e6;font:400 13px Arial,sans-serif;color:#0f1111}
+.amz .bar{display:flex;gap:22px;align-items:center;height:46px}
+.amz img{width:96px}.amz b{border-bottom:2px solid #0f1111;padding:12px 0}.amz .f{margin-left:auto;border:1px solid #888c8c;border-radius:6px;padding:2px 10px;font-size:12px}
+/* 1 첫 화면 */
+.hero{position:relative;background:var(--hero)}
+.hero .ph{aspect-ratio:2/1;object-fit:cover}
+.hero .tx{position:absolute;inset:0;display:flex;align-items:center}
+.hero .tx .wrap{width:100%}
+.hero .box{max-width:430px}
+.hero .big{font-size:132px;line-height:.86;letter-spacing:-.01em;margin:14px 0 6px}
+.hero .big small{font-size:.42em;margin-left:2px}
+.hero .k{font:600 22px Archivo;font-stretch:75%;letter-spacing:.01em;color:var(--ink);text-transform:uppercase}
+.hero .rule{width:44px;height:3px;background:var(--red);margin:22px 0 16px}
+.hero .p{font-size:15px;color:var(--body)}.hero .p b{font-weight:400;color:var(--ink)}
+.hero .btn{margin-top:26px}
+.hero .ph.m,.hero .txm{display:none}
+/* 2 제품 선택 */
+.pick{background:var(--sec);padding:72px 0 80px}
+.pick .head{display:flex;justify-content:space-between;align-items:end;margin-bottom:34px}
+.pick h2{font-size:44px;line-height:1;margin-top:10px}
+.pick .head p{max-width:360px;font-size:14px;color:var(--sub)}
+.grp{display:flex;align-items:baseline;gap:14px;border-top:1px solid var(--ink);padding:14px 0 18px}
+.grp h3{font-size:20px}.grp span{font-size:13px;color:var(--grp)}.grp a{margin-left:auto;font-size:12px;border-bottom:1px solid var(--ink)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card .im{position:relative;background:var(--tile);aspect-ratio:1}
+.card .st{position:absolute;left:14px;top:12px;font:400 11px Geologica;letter-spacing:.1em;color:var(--sub)}
+.card .tag{position:absolute;right:14px;top:12px;font:400 11px Geologica;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.card h4{font:600 19px Archivo;font-stretch:75%;color:var(--ink);margin:14px 0 4px}
+.card .d{font-size:13.5px;line-height:1.5;min-height:42px}
+.card .s{display:flex;justify-content:space-between;margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:12px;color:var(--sub)}
+.card .s b{font-weight:400;color:var(--ink)}
+.rj{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:46px}.rj .about{grid-column:span 3}
+.rj .about{background:var(--tile);display:flex;flex-direction:column;justify-content:center;padding:0 56px}
+body.steel .rj .about{background:#f6f7f8}
+.rj .about h3{font-size:34px;line-height:1.05;margin:10px 0 14px}
+.rj .about p{max-width:440px;font-size:14px}.rj .about .btn{align-self:flex-start;margin-top:22px}
+/* 칸 표시(아마존 구현 단위) */
+body.qa [data-tile]{outline:2px dashed #1a73e8;outline-offset:-2px;position:relative}
+body.qa [data-tile]::after{content:attr(data-tile);position:absolute;left:4px;top:4px;z-index:5;background:#1a73e8;color:#fff;font:400 11px/1.3 'Noto Sans KR',sans-serif;padding:2px 6px;max-width:90%}
+@media(max-width:860px){
+ .wrap{padding:0 16px}
+ .amz .bar{gap:14px;overflow:hidden;white-space:nowrap;font-size:12px}.amz img{width:76px}.amz .x{display:none}
+ .hero .ph.d,.hero .tx{display:none}.hero .ph.m,.hero .txm{display:block}
+ .hero .txm{padding:34px 16px 6px;background:var(--mtop)}  /* 모바일 글 칸 = 사진 맨 위 색(실측) */
+ .hero .big{font-size:96px}.hero .k{font-size:18px}.hero .rule{margin:16px 0 12px}.hero .p{font-size:14px}.hero .btn{margin-top:18px}
+ .hero .ph.m{aspect-ratio:1}
+ .pick{padding:44px 0 52px}.pick .head{display:block;margin-bottom:24px}.pick h2{font-size:34px}.pick .head p{margin-top:10px}
+ .cards{grid-template-columns:1fr 1fr;gap:12px 10px}
+ .card h4{font-size:17px}.card .d{font-size:12.5px;min-height:0}
+ .grp span{display:none}
+ .rj{grid-template-columns:1fr;margin-top:36px}.rj .about{grid-column:auto}.rj .card{display:grid;grid-template-columns:44% 1fr;column-gap:14px;align-items:start}.rj .card .im{grid-row:span 3}.rj .card h4{margin-top:4px}.rj .about{padding:26px 20px;order:-1}.rj .about h3{font-size:26px}
+}
+</style></head>
+<body>
+<div class="amz"><div class="wrap bar"><img src="img/logo-dark.png" alt="PYDERIN"><b>Home</b><span>Shop All</span><span>PDRN Lift</span><span class="x">REJUVUSTER</span><span class="x">About Us</span><span class="f">Follow</span></div></div>
+
+<!-- 1 첫 화면: PC는 2:1 한 장(글자 이미지에 포함), 모바일은 글 칸 + 정사각 사진 -->
+<div class="hero" data-tile="① 첫 화면 · 전체 폭 이미지 칸(이후 같은 구도로 백그라운드 비디오 교체) → 링크: 리프트 크림">
+ <img class="ph d" id="hd" alt="PDRN Lift Cream">
+ <div class="tx"><div class="wrap"><div class="box">
+  <span class="eyebrow">Salmon DNA PDRN</span>
+  <div class="big num">99<small>%</small></div>
+  <div class="k">Purity PDRN</div>
+  <div class="rule"></div>
+  <p class="p"><b>PDRN Lift Cream</b> · 20,000 ppm salmon DNA PDRN.<br>From Korean clinics and pharmacies.</p>
+  <span class="btn">Shop the cream</span>
+ </div></div></div>
+ <div class="txm"><span class="eyebrow">Salmon DNA PDRN</span><div class="big num">99<small>%</small></div><div class="k">Purity PDRN</div><div class="rule"></div>
+  <p class="p"><b>PDRN Lift Cream</b> · 20,000 ppm salmon DNA PDRN.<br>From Korean clinics and pharmacies.</p><span class="btn">Shop the cream</span></div>
+ <img class="ph m" id="hm" alt="PDRN Lift Cream">
+</div>
+
+<!-- 2 제품 선택: 지금 리스팅된 5개만(PDRN Lift 4 + REJUVUSTER 1) -->
+<section class="pick"><div class="wrap">
+ <div class="head" data-tile="② 제목 · 전체 폭 이미지 칸"><div><span class="eyebrow">Shop by line</span><h2>Find your PDRN.</h2></div>
+  <p>Two lines, one PDRN standard: the Lift line and the Korean pharmacy line.</p></div>
+
+ <div class="grp" data-tile="③ 라인 제목 · 전체 폭 이미지 칸 → 링크: PDRN Lift"><h3>PDRN Lift</h3><span>Four steps, built around PDRN.</span><a href="#">Explore the line</a></div>
+ <div class="cards">
+  <a class="card" href="#" data-tile="④ 4분의1 칸 → 상품: Toner"><div class="im"><span class="st">STEP 01</span><img src="img/card_toner.jpg" alt=""></div><h4>PDRN Lift Toner</h4><div class="d">Hydrates and preps skin for what comes next.</div><div class="s"><span>100 ml</span><span>Shop now</span></div></a>
+  <a class="card" href="#" data-tile="④ 4분의1 칸 → 상품: Ampoule"><div class="im"><span class="st">STEP 02</span><img src="img/card_ampoule.jpg" alt=""></div><h4>PDRN Lift Fit Ampoule</h4><div class="d">A lightweight, concentrated PDRN serum.</div><div class="s"><span>30 ml</span><span>Shop now</span></div></a>
+  <a class="card" href="#" data-tile="④ 4분의1 칸 → 상품: Cream"><div class="im"><span class="st">STEP 03</span><span class="tag">Signature</span><img src="img/card_cream.jpg" alt=""></div><h4>PDRN Lift Cream</h4><div class="d">Firming cream with 20,000 ppm salmon DNA PDRN.</div><div class="s"><span>30 ml</span><span>Shop now</span></div></a>
+  <a class="card" href="#" data-tile="④ 4분의1 칸 → 상품: Mask"><div class="im"><span class="st">WEEKLY</span><img src="img/card_mask.jpg" alt=""></div><h4>PDRN Lift Facial Mask</h4><div class="d">A PDRN sheet mask, five per box.</div><div class="s"><span>5 sheets</span><span>Shop now</span></div></a>
+ </div>
+
+ <div class="rj" data-tile="⑤ 전체 폭 이미지 칸 1장(제품 1개뿐이라 한 칸) → 상품: REJUVUSTER">
+  <a class="card" href="#"><div class="im"><span class="tag">Pharmacy line</span><img src="img/card_rejuvuster.jpg" alt=""></div><h4>REJUVUSTER Cream+</h4><div class="d">The PDRN cream carried by pharmacies across Korea.</div><div class="s"><span>25 ml</span><span>Shop now</span></div></a>
+  <a class="about" href="#"><span class="eyebrow">The Korean pharmacy line</span><h3>REJUVUSTER</h3><p>Carried by pharmacies across Korea. 10,000 ppm PDRN, 2% niacinamide and centella.</p><span class="btn">Explore</span></a>
+ </div>
+</div></section>
+<script>
+const v=(location.hash.match(/steel|white/)||['white'])[0];
+document.body.classList.add(v); if(/qa/.test(location.hash))document.body.classList.add('qa');
+const k=v==='steel'?'B':'A'; hd.src='img/hero_'+k+'.jpg'; hm.src='img/hero_'+k+'_m.jpg';
+</script>
+</body></html>
