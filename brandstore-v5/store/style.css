@@ -143,4 +143,8 @@ section{padding:80px 0}
 }
 .feat{margin-top:-40px}.feat+section{padding-top:40px}.sig,.band1{margin-top:-40px;padding-top:40px}.explore.one{margin-top:-40px}.explore.one a{padding-top:40px}
 @media(max-width:860px){.feat{margin-top:-26px}.feat+section{padding-top:26px}.feat .clinimg{padding:26px 16px 0}.feat .txt{padding:32px 16px 26px}.sig,.band1{margin-top:-26px;padding-top:26px}.explore.one{margin-top:-26px}.explore.one a{padding-top:26px}
+ .feat .clinimg img{aspect-ratio:auto;width:min(100%,300px)}.feat .clinimg p{width:min(100%,300px)}
+ .eyebrow,.fn,.txm .fn,.steps .step,.im .st,.im .tag,.doc span,.q span,.howto1 b{font-size:12px}.nums span{font-size:11px}
+ .steps.txt{grid-template-columns:1fr;gap:0}.steps.txt>div{display:grid;grid-template-columns:120px 1fr;column-gap:16px;align-content:start;padding:16px 0;border-bottom:1px solid var(--line)}
+ .steps.txt>div>img{grid-row:1/span 4;width:120px}.steps.txt .step{margin-top:0}
  .nums .num{font-size:52px}.sig .nums .num{font-size:40px}.facts.three .num{font-size:40px}.res .num{font-size:40px}.res div{grid-template-columns:150px 1fr}}
