@@ -1,0 +1,45 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PYDERIN 브랜드관 목업 v4 — Shop All</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,400..700&family=Geologica:wght@300;400&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><style>
+.ptitle{background:var(--steel);padding:72px 0 56px;border-bottom:6px solid var(--red)}
+.ptitle h1{font-size:clamp(40px,5vw,72px);line-height:1;margin:0 0 14px}
+.ptitle p{max-width:520px}
+.split{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.split .im img{height:100%;object-fit:cover}
+.split .tx{padding:72px 56px;display:flex;flex-direction:column;justify-content:center;background:#fff}
+.split .tx h2{font-size:clamp(40px,4.4vw,64px);line-height:1;margin-bottom:14px}
+.split.first{border-bottom:6px solid var(--red)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.steps .im{background:var(--steel2)}.steps img{aspect-ratio:4/5;object-fit:cover}
+.steps .step{display:block;margin-top:16px;font:600 13px Archivo;font-stretch:75%;color:var(--red)}
+.steps h3{font-size:19px;margin:4px 0 6px}.steps p{font-size:13px;color:var(--sub)}
+.ingr{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #c9d1d8}
+.ingr div{padding:22px 18px 22px 0;border-bottom:1px solid #c9d1d8}
+.ingr .num{display:block;font-size:44px;line-height:1;font-weight:700;color:var(--ink);min-height:44px}
+.ingr b{display:block;font:600 18px Archivo;font-stretch:75%;margin:10px 0 4px;color:var(--ink)}
+.ingr span{font-size:13px;color:var(--sub)}
+.explore{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.explore a{position:relative;display:block;background:var(--steel)}
+.explore img{aspect-ratio:3/2;object-fit:cover}
+.explore .cap{display:flex;justify-content:space-between;align-items:end;padding:20px 0 0;background:#fff}
+.explore h3{font-size:28px}
+.grid.rjrow{grid-template-columns:1fr 1fr}.rjwide{display:flex;flex-direction:column;background:var(--steel)}.rjwide img{aspect-ratio:3/2;object-fit:cover;object-position:50% 45%}.rjwide .cap{padding:36px}.rjwide h3{font-size:30px;line-height:1.05;margin:4px 0 10px}.rjwide p{font-size:13px;color:var(--sub);margin-bottom:20px}
+.grid5{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.dq{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.dq .q{background:var(--deep)}
+@media(max-width:860px){.split,.explore,.dq{grid-template-columns:1fr}.split .tx{padding:40px 18px}.split .tx h2{font-size:30px}
+ .steps{grid-template-columns:1fr 1fr;gap:34px 14px}.grid.rjrow{grid-template-columns:1fr}.rjwide .cap{padding:22px 18px 26px}.ingr{grid-template-columns:1fr 1fr}.grid5{grid-template-columns:1fr 1fr;gap:14px}.ptitle{padding:44px 0 36px}}
+.explore.one{grid-template-columns:1fr}.explore.one a{display:grid;grid-template-columns:1fr 1fr;align-items:center}.explore.one img{aspect-ratio:1}.explore.one .cap{padding:0 48px;flex-direction:column;align-items:flex-start;gap:20px;background:none}@media(max-width:860px){.explore.one a{grid-template-columns:1fr}.explore.one .cap{padding:20px 0 0;flex-direction:row;align-items:end}}</style></head><body>
+<div class="note"><div class="wrap"><b>초안 · 목업 v4 — Shop All</b> — 홈과 같은 디자인 규칙. 문구는 기존 승인 페이지 문구. 아마존 미반영. <label><input type="checkbox" onchange="document.body.classList.toggle('qa',this.checked)"> 사진 출처 표시</label></div></div>
+<div class="amz"><div class="wrap bar"><span class="follow">Follow</span><a href="index.html">Home</a><b>Shop All</b><a href="lift.html">PDRN Lift</a><a href="rejuvuster.html">REJUVUSTER</a><a href="about.html">About Us</a></div></div><div class="hdr" data-tile="로고 띠 → 링크: Home"><div class="wrap hin"><img class="logo" src="img/logo-white.png" alt="PYDERIN"><span>Korean clinic and pharmacy skincare</span></div></div>
+
+<div class="ptitle" data-tile="페이지 제목"><div class="wrap"><span class="eyebrow">Shop All</span><h1>The full PDRN collection.</h1><p>Two lines, one PDRN standard: the Lift line and the Korean pharmacy line.</p></div></div>
+<section><div class="wrap">
+ <div class="head"><div><span class="eyebrow">The Lift line</span><h2>PDRN Lift</h2></div><a class="more" href="lift.html">Explore the line</a></div>
+ <div class="grid"><a class="card" href="#" data-tile="상품 카드 → 링크: cream"><div class="im"><span class="t">Signature</span><img src="img/card_cream.jpg" alt=""></div><h3>PDRN Lift Cream</h3><div class="d">Firming cream with 20,000 ppm salmon DNA PDRN.</div><div class="s"><span>30 ml</span><span class="more">Shop Now</span></div></a><a class="card" href="#" data-tile="상품 카드 → 링크: ampoule"><div class="im"><img src="img/card_ampoule.jpg" alt=""></div><h3>PDRN Lift Fit Ampoule</h3><div class="d">A lightweight, concentrated PDRN serum.</div><div class="s"><span>30 ml</span><span class="more">Shop Now</span></div></a><a class="card" href="#" data-tile="상품 카드 → 링크: toner"><div class="im"><img src="img/card_toner.jpg" alt=""></div><h3>PDRN Lift Toner</h3><div class="d">Hydrates and preps skin for what comes next.</div><div class="s"><span>100 ml</span><span class="more">Shop Now</span></div></a><a class="card" href="#" data-tile="상품 카드 → 링크: mask"><div class="im"><span class="t">Weekly</span><img src="img/card_mask.jpg" alt=""></div><h3>PDRN Lift Facial Mask</h3><div class="d">A PDRN sheet mask, five per box.</div><div class="s"><span>5 sheets</span><span class="more">Shop Now</span></div></a></div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+ <div class="head"><div><span class="eyebrow">The Korean pharmacy line</span><h2>REJUVUSTER</h2></div><a class="more" href="rejuvuster.html">Explore the line</a></div>
+ <div class="grid rjrow"><a class="card" href="#" data-tile="상품 카드 → 링크: rejuvuster"><div class="im"><span class="t">Pharmacy line</span><img src="img/card_rejuvuster.jpg" alt=""></div><h3>REJUVUSTER Cream+</h3><div class="d">The PDRN cream carried by pharmacies across Korea.</div><div class="s"><span>25 ml</span><span class="more">Shop Now</span></div></a><a class="rjwide" href="rejuvuster.html" data-tile="라인 소개 → 링크: REJUVUSTER"><img src="img/rj-drops.jpg" alt=""><div class="cap"><span class="eyebrow">The Korean pharmacy line</span><h3>Carried by pharmacies across Korea.</h3><p>10,000 ppm PDRN, 2% niacinamide and centella.</p><span class="btn">Explore</span></div></a></div>
+</div></section>
+
+<div class="end" data-tile="끝 로고 띠 → 링크: Home"><img src="img/logo-white.png" alt="PYDERIN"><span>Korean clinic and pharmacy skincare</span></div></body></html>
