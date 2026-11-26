@@ -1,0 +1,135 @@
+[
+ {
+  "product": "마스크",
+  "file": "A01_what_mobile_600x450.jpg",
+  "max_empty_band_px": 128,
+  "side": "왼쪽",
+  "from_y": 200
+ },
+ {
+  "product": "마스크",
+  "file": "A02_who_mobile_600x450.jpg",
+  "max_empty_band_px": 40,
+  "side": "왼쪽",
+  "from_y": 0
+ },
+ {
+  "product": "마스크",
+  "file": "A03_proof_mobile_600x450.jpg",
+  "max_empty_band_px": 80,
+  "side": "오른쪽",
+  "from_y": 256
+ },
+ {
+  "product": "마스크",
+  "file": "A04_ingredients_mobile_600x450.jpg",
+  "max_empty_band_px": 54,
+  "side": "왼쪽",
+  "from_y": 96
+ },
+ {
+  "product": "마스크",
+  "file": "A05_sheet_mobile_600x450.jpg",
+  "max_empty_band_px": 158,
+  "side": "왼쪽",
+  "from_y": 292
+ },
+ {
+  "product": "마스크",
+  "file": "A06_feel_mobile_600x450.jpg",
+  "max_empty_band_px": 122,
+  "side": "오른쪽",
+  "from_y": 0
+ },
+ {
+  "product": "마스크",
+  "file": "A07_how-to-use_mobile_600x450.jpg",
+  "max_empty_band_px": 73,
+  "side": "오른쪽",
+  "from_y": 377
+ },
+ {
+  "product": "세럼",
+  "file": "A01_what_mobile_600x450.jpg",
+  "max_empty_band_px": 82,
+  "side": "오른쪽",
+  "from_y": 57
+ },
+ {
+  "product": "세럼",
+  "file": "A02_ingredients_mobile_600x450.jpg",
+  "max_empty_band_px": 32,
+  "side": "왼쪽",
+  "from_y": 56
+ },
+ {
+  "product": "세럼",
+  "file": "A03_moisture_mobile_600x450.jpg",
+  "max_empty_band_px": 47,
+  "side": "오른쪽",
+  "from_y": 403
+ },
+ {
+  "product": "세럼",
+  "file": "A04_gentle_mobile_600x450.jpg",
+  "max_empty_band_px": 109,
+  "side": "오른쪽",
+  "from_y": 48
+ },
+ {
+  "product": "세럼",
+  "file": "A05_how-to-use_mobile_600x450.jpg",
+  "max_empty_band_px": 46,
+  "side": "오른쪽",
+  "from_y": 98
+ },
+ {
+  "product": "세럼",
+  "file": "A06_line_mobile_600x450.jpg",
+  "max_empty_band_px": 78,
+  "side": "왼쪽",
+  "from_y": 84
+ },
+ {
+  "product": "크림",
+  "file": "A01_question_mobile_600x450.jpg",
+  "max_empty_band_px": 24,
+  "side": "왼쪽",
+  "from_y": 0
+ },
+ {
+  "product": "크림",
+  "file": "A02_made_mobile_600x450.jpg",
+  "max_empty_band_px": 128,
+  "side": "오른쪽",
+  "from_y": 0
+ },
+ {
+  "product": "크림",
+  "file": "A03_whats-inside_mobile_600x450.jpg",
+  "max_empty_band_px": 157,
+  "side": "오른쪽",
+  "from_y": 216
+ },
+ {
+  "product": "크림",
+  "file": "A04_skin-study_mobile_600x450.jpg",
+  "max_empty_band_px": 58,
+  "side": "왼쪽",
+  "from_y": 392
+ },
+ {
+  "product": "크림",
+  "file": "A05_gentle_mobile_600x450.jpg",
+  "max_empty_band_px": 27,
+  "side": "왼쪽",
+  "from_y": 280
+ },
+ {
+  "product": "크림",
+  "file": "A06_line_mobile_600x450.jpg",
+  "max_empty_band_px": 46,
+  "side": "왼쪽",
+  "from_y": 185
+ }
+]
